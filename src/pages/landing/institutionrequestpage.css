@@ -1,0 +1,304 @@
+/* ===== INSTITUTION REQUEST PAGE ===== */
+.irp {
+  min-height: 100vh;
+  background: #f4f6f9;
+  font-family: 'Inter', -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* ══════════════════════════════════════════
+   HERO — blue gradient, text only
+══════════════════════════════════════════ */
+.irp__hero {
+  background: linear-gradient(135deg, #1a8fe3 0%, #3ab5f5 100%);
+  padding-top: 88px;
+  padding-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hero top row: text only */
+.irp__hero-top {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 100px 48px 0;
+}
+
+.irp__hero-left {
+  padding-bottom: 48px;
+}
+
+.irp__hero-h1 {
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.irp__hero-sub {
+  font-size: 14px;
+  line-height: 22px;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 360px;
+}
+
+/* ── Old phone container — no longer used ── */
+.irp__hero-right-phone { display: none; }
+
+/* Diamond decorations — used inside irp__phone-behind */
+.irp__hero-diamond {
+  position: absolute;
+  border-radius: 8px;
+  background: rgba(26, 143, 227, 0.12);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+.irp__hero-diamond--1 {
+  width: 100px; height: 100px;
+  right: -10px; top: -20px;
+}
+.irp__hero-diamond--2 {
+  width: 60px; height: 60px;
+  right: 80px; top: 40px;
+  opacity: 0.6;
+}
+
+/* ══════════════════════════════════════════
+   FORM WRAP — phone image floats behind form card
+══════════════════════════════════════════ */
+.irp__form-wrap {
+  max-width: 1100px;
+  margin: -40px auto 0;
+  padding: 0 48px 60px;
+  position: relative;
+  z-index: 20;
+}
+
+/* Phone image — absolutely positioned on right, behind form card */
+.irp__phone-behind {
+  position: absolute;
+  right: 0;
+  top: -180px;
+  width: 220px;
+  z-index: 1;           /* behind form card (z-index: 2) */
+  pointer-events: none;
+  overflow: hidden;
+  /* Clip bottom — show only top ~60% of phone */
+  max-height: 221px;
+}
+
+.irp__phone-behind img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  filter: drop-shadow(0 12px 28px rgba(0,0,0,0.2));
+}
+
+/* Form card sits above phone image */
+.irp__form-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 40px 48px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.12);
+  border: 1px solid #E5E7EB;
+  max-width: 860px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* ── Form ── */
+.irp__form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.irp__form-title {
+  font-weight: 700;
+  font-size: 22px;
+  color: #111827;
+  margin: 0 0 4px 0;
+  text-align: center;
+}
+
+.irp__form-sub {
+  font-size: 13px;
+  line-height: 20px;
+  color: #6B7280;
+  margin: 0 0 12px 0;
+  text-align: center;
+}
+
+.irp__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.irp__field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.irp__field--full {
+  grid-column: 1 / -1;
+}
+
+.irp__field label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.irp__field input,
+.irp__field select,
+.irp__field textarea {
+  padding: 10px 14px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.irp__field input::placeholder,
+.irp__field textarea::placeholder { color: #9CA3AF; }
+
+.irp__field input:focus,
+.irp__field select:focus,
+.irp__field textarea:focus {
+  border-color: #1a8fe3;
+  box-shadow: 0 0 0 3px rgba(26,143,227,0.1);
+}
+
+.irp__field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+  cursor: pointer;
+}
+
+.irp__checkboxes {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.irp__check-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+}
+
+.irp__check-label input {
+  width: 15px;
+  height: 15px;
+  accent-color: #1a8fe3;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  flex-shrink: 0;
+}
+
+.irp__agree { font-size: 12px; color: #6B7280; }
+
+.irp__submit {
+  background: #1a8fe3;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  margin-top: 4px;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.irp__submit:hover  { background: #1580cc; }
+.irp__submit:active { transform: scale(0.99); }
+
+/* ══════════════════════════════════════════
+   FEATURES STRIP
+══════════════════════════════════════════ */
+.irp__features {
+  background: #ffffff;
+  padding: 60px 48px;
+  border-top: 1px solid #E5E7EB;
+}
+
+.irp__features-inner {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.irp__feature {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.irp__feature-icon {
+  display: flex;
+  align-items: center;
+}
+
+.irp__feature-title {
+  font-weight: 600;
+  font-size: 15px;
+  color: #111827;
+  margin: 0;
+}
+
+.irp__feature-desc {
+  font-size: 13px;
+  line-height: 20px;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .irp__hero-top { padding: 32px 24px 0; }
+  .irp__hero { padding-bottom: 40px; }
+  .irp__phone-behind { display: none; }
+  .irp__form-wrap { padding: 0 24px 40px; margin-top: -20px; }
+  .irp__features { padding: 40px 24px; }
+  .irp__features-inner { flex-direction: column; gap: 24px; }
+}
+
+@media (max-width: 640px) {
+  .irp__row { grid-template-columns: 1fr; }
+  .irp__form-card { padding: 24px 20px; }
+  .irp__hero-h1 { font-size: 26px; }
+  .irp__form-wrap { padding: 0 16px 32px; }
+  .irp__hero-top { padding: 24px 16px 0; }
+}

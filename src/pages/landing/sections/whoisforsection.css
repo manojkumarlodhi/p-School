@@ -1,0 +1,348 @@
+/* ===== WHO IS FOR SECTION ===== */
+.wif {
+  padding: 80px 0;
+  background: #ffffff;
+}
+
+.wif__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Heading ── */
+.wif__hd {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wif__h2 {
+  font-family: 'Gilroy-Bold', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.15;
+  color: #111827;
+  margin: 0;
+}
+
+.wif__sub {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* ══════════════════════════════════════════
+   WHO CARDS
+══════════════════════════════════════════ */
+.wif__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Base card ── */
+.wif__card {
+  display: flex;
+  flex-direction: column;
+  height: 380px;
+  position: relative;
+  overflow: hidden;
+  background: #cce9f8;
+}
+
+/* ── Active (middle) card ── */
+.wif__card--active {
+  background: #1a8fe3;
+}
+
+/* ── Card text block — overlays on top of image ── */
+.wif__card-text {
+  padding: 24px 24px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.wif__card-title {
+  font-family: 'Gilroy-Bold', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  color: #111827;
+  margin: 0;
+}
+
+.wif__card--active .wif__card-title {
+  color: #ffffff;
+}
+
+.wif__card-desc {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 20px;
+  color: #374151;
+  margin: 0;
+  max-width: 220px;
+}
+
+.wif__card--active .wif__card-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* ── Card image area — fills entire card, behind text ── */
+.wif__card-img {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.wif__card-img img {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: auto;
+  height: 78%;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.wif__card:hover .wif__card-img img {
+  transform: translateX(-50%) scale(1.04);
+}
+
+/* ── Decorative diamonds ── */
+.wif__diamond {
+  position: absolute;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.22);
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wif__diamond--1 {
+  width: 72px;
+  height: 72px;
+  bottom: 48px;
+  right: -20px;
+}
+
+.wif__diamond--2 {
+  width: 48px;
+  height: 48px;
+  bottom: 16px;
+  right: 36px;
+  opacity: 0.55;
+}
+
+.wif__diamond--3 {
+  width: 36px;
+  height: 36px;
+  bottom: 80px;
+  right: 44px;
+  opacity: 0.35;
+}
+
+/* ══════════════════════════════════════════
+   BUILT FOR SCHOOLS BANNER
+══════════════════════════════════════════ */
+.wif__banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 16px;
+  overflow: hidden;
+  min-height: 260px;
+  background: linear-gradient(180deg, rgba(0, 157, 227, 0.18) 0%, rgba(0, 157, 227, 0.04) 100%);
+  position: relative;
+}
+
+/* ── Banner text side ── */
+.wif__banner-text {
+  padding: 40px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.wif__banner-h2 {
+  font-family: 'Gilroy-Bold', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.25;
+  color: #111827;
+  margin: 0;
+}
+
+.wif__banner-sub {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #4B5563;
+  margin: 0;
+  max-width: 400px;
+}
+
+/* Feature list — 2 columns */
+.wif__banner-features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 24px;
+  list-style: none;
+  margin: 4px 0 0;
+  padding: 0;
+}
+
+.wif__banner-feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Gilroy-SemiBold', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: #111827;
+}
+
+.wif__banner-bar {
+  display: inline-block;
+  width: 3px;
+  height: 16px;
+  border-radius: 2px;
+  background: #1a8fe3;
+  flex-shrink: 0;
+}
+
+.wif__banner-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #1a8fe3;
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: 4px;
+  transition: background 0.2s, transform 0.2s;
+  font-family: inherit;
+}
+
+.wif__banner-btn:hover {
+  background: #1580cc;
+  transform: translateY(-2px);
+}
+
+/* ── Banner image side ── */
+.wif__banner-img {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.wif__banner-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Banner diamonds */
+.wif__banner-diamond {
+  position: absolute;
+  border-radius: 8px;
+  background: rgba(0, 157, 227, 0.18);
+  transform: rotate(45deg);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wif__banner-diamond--1 {
+  width: 100px;
+  height: 100px;
+  top: 20px;
+  right: 60px;
+}
+
+.wif__banner-diamond--2 {
+  width: 64px;
+  height: 64px;
+  top: 80px;
+  right: 20px;
+  opacity: 0.6;
+}
+
+.wif__banner-diamond--3 {
+  width: 44px;
+  height: 44px;
+  bottom: 40px;
+  right: 140px;
+  opacity: 0.4;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 56.25rem) {   /* 900px */
+  .wif__h2 { font-size: 32px; }
+  .wif__card { height: 360px; }
+  .wif__banner-h2 { font-size: 24px; }
+  .wif__banner-text { padding: 32px 28px; }
+}
+
+@media (max-width: 48rem) {      /* 768px */
+  .wif { padding: 56px 0; }
+  .wif__h2 { font-size: 28px; }
+
+  .wif__cards {
+    grid-template-columns: 1fr;
+    border-radius: 12px;
+  }
+
+  .wif__card { height: 340px; }
+
+  .wif__banner {
+    grid-template-columns: 1fr;
+  }
+
+  .wif__banner-img {
+    height: 200px;
+  }
+
+  .wif__banner-features {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 30rem) {      /* 480px */
+  .wif { padding: 40px 0; }
+  .wif__h2 { font-size: 24px; }
+  .wif__card-title { font-size: 20px; }
+  .wif__banner-h2 { font-size: 22px; }
+  .wif__banner-text { padding: 24px 20px; }
+}

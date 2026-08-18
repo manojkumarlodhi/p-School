@@ -1,0 +1,230 @@
+/* ── Instructor Profile ── prefix: prof- */
+
+.prof-page {
+  padding: 24px 28px;
+  min-height: 100%;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #f4f6f9;
+}
+
+.prof-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.prof-back-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  padding: 0;
+  font-family: inherit;
+}
+.prof-back-btn:hover { color: #1ba8d5; }
+.prof-page-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Avatar section */
+.prof-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.prof-avatar {
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 14px rgba(27,168,213,0.25);
+  margin-bottom: 12px;
+}
+.prof-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.prof-name { font-size: 20px; font-weight: 800; color: #111827; margin-bottom: 4px; }
+.prof-email { font-size: 13px; color: #1ba8d5; margin-bottom: 10px; cursor: pointer; }
+.prof-edit-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.prof-edit-btn:hover { background: #f0f9ff; border-color: #1ba8d5; color: #1ba8d5; }
+
+/* Section */
+.prof-section { margin-bottom: 16px; }
+.prof-section-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+  padding: 0 4px;
+}
+
+.prof-menu-card {
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+}
+.prof-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 18px;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+  transition: background 0.12s;
+  font-size: 14px;
+  font-weight: 500;
+  color: #111827;
+  background: none;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+.prof-menu-item:last-child { border-bottom: none; }
+.prof-menu-item:hover { background: #f9fafb; }
+.prof-menu-chevron { color: #9ca3af; font-size: 18px; }
+
+/* Logout button */
+.prof-logout-btn {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 12px;
+  background: #ef4444;
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  transition: background 0.15s;
+}
+.prof-logout-btn:hover { background: #dc2626; }
+
+/* ── Logout Modal ── */
+.prof-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.prof-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 32px 28px 24px;
+  width: 100%;
+  max-width: 360px;
+  text-align: center;
+  animation: profModalIn 0.2s ease;
+}
+@keyframes profModalIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.prof-modal-icon {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: #fee2e2;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+  color: #ef4444;
+}
+.prof-modal-title { font-size: 20px; font-weight: 800; color: #ef4444; margin: 0 0 8px; }
+.prof-modal-sub   { font-size: 14px; color: #6b7280; margin: 0 0 24px; }
+.prof-modal-actions { display: flex; gap: 12px; }
+.prof-modal-cancel {
+  flex: 1;
+  padding: 12px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+}
+.prof-modal-confirm {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: #ef4444;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* ── Static content pages (About, Privacy, Terms) ── */
+.prof-static-page {
+  padding: 24px 28px;
+  min-height: 100%;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #fff;
+}
+.prof-static-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 2px dashed #bae6fd;
+}
+.prof-static-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+.prof-static-section { margin-bottom: 20px; }
+.prof-static-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px;
+}
+.prof-static-text {
+  font-size: 13.5px;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0;
+}
+
+@media (max-width: 600px) {
+  .prof-page, .prof-static-page { padding: 16px; }
+}

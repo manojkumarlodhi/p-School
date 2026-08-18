@@ -1,0 +1,411 @@
+/* ── Individual Instructor Profile — Web Layout ── prefix: ip- */
+
+/* ════════════════════════════════════════════
+   MAIN PROFILE PAGE
+════════════════════════════════════════════ */
+.ip-page {
+  padding: 28px 32px;
+  min-height: 100%;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #f8fafc;
+}
+
+/* Two-column layout */
+.ip-layout {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ── Left: Profile card ── */
+.ip-profile-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #f0f2f5;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  padding: 24px;
+}
+
+.ip-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.ip-card-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+.ip-upgrade-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 14px;
+  border: 1.5px solid #f59e0b;
+  border-radius: 20px;
+  background: #fffbeb;
+  color: #b45309;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.ip-upgrade-btn:hover { background: #fef3c7; }
+
+/* Avatar section */
+.ip-avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px 0 20px;
+  border-bottom: 1px solid #f3f4f6;
+  margin-bottom: 20px;
+}
+.ip-avatar {
+  width: 88px; height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #fff;
+  box-shadow: 0 4px 16px rgba(27,168,213,0.25);
+  margin-bottom: 12px;
+}
+.ip-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.ip-name  { font-size: 20px; font-weight: 800; color: #111827; margin: 0 0 4px; }
+.ip-email { font-size: 13px; color: #1ba8d5; margin: 0 0 12px; cursor: pointer; }
+.ip-edit-btn {
+  display: flex; align-items: center; gap: 6px;
+  padding: 7px 16px; border: 1.5px solid #e5e7eb;
+  border-radius: 8px; background: #fff;
+  font-size: 13px; font-weight: 600; color: #374151;
+  cursor: pointer; font-family: inherit; transition: all 0.15s;
+}
+.ip-edit-btn:hover { background: #f0f9ff; border-color: #1ba8d5; color: #1ba8d5; }
+
+/* Sections */
+.ip-section { margin-bottom: 18px; }
+.ip-section-title {
+  font-size: 12px; font-weight: 700; color: #9ca3af;
+  text-transform: uppercase; letter-spacing: 0.6px;
+  margin: 0 0 6px 2px;
+}
+.ip-section-sub { font-size: 12px; color: #9ca3af; margin: 0 0 6px 2px; }
+
+/* Menu card */
+.ip-menu-card {
+  background: #f9fafb;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #f0f2f5;
+}
+.ip-menu-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 13px 16px; border-bottom: 1px solid #f0f2f5;
+  cursor: pointer; transition: background 0.12s;
+  background: none; border-left: none; border-right: none; border-top: none;
+  width: 100%; text-align: left; font-family: inherit;
+}
+.ip-menu-item:last-child { border-bottom: none; }
+.ip-menu-item:hover { background: #f0f9ff; }
+.ip-menu-item-left { display: flex; flex-direction: column; gap: 2px; }
+.ip-menu-label { font-size: 14px; font-weight: 500; color: #111827; }
+.ip-menu-sub   { font-size: 12px; font-weight: 600; }
+
+/* Logout */
+.ip-logout-btn {
+  width: 100%; padding: 13px; border: none; border-radius: 12px;
+  background: #ef4444; color: #fff; font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: inherit;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  margin-top: 8px; transition: background 0.15s;
+}
+.ip-logout-btn:hover { background: #dc2626; }
+
+/* ── Right: Info card ── */
+.ip-right { position: sticky; top: 28px; }
+.ip-info-card {
+  background: #fff; border-radius: 16px;
+  border: 1px solid #f0f2f5; box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+  padding: 32px 24px; text-align: center;
+}
+.ip-info-avatar {
+  width: 96px; height: 96px; border-radius: 50%;
+  overflow: hidden; margin: 0 auto 16px;
+  border: 3px solid #e0f2fe;
+  box-shadow: 0 4px 16px rgba(27,168,213,0.2);
+}
+.ip-info-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.ip-info-name  { font-size: 22px; font-weight: 800; color: #111827; margin: 0 0 4px; }
+.ip-info-role  { font-size: 13px; color: #9ca3af; margin: 0 0 4px; }
+.ip-info-email { font-size: 13px; color: #1ba8d5; margin: 0 0 24px; }
+
+.ip-info-stats {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; margin-bottom: 24px;
+  background: #f8fafc; border-radius: 12px; padding: 16px;
+}
+.ip-info-stat { flex: 1; text-align: center; }
+.ip-info-stat-value { font-size: 20px; font-weight: 800; color: #111827; margin-bottom: 3px; }
+.ip-info-stat-label { font-size: 12px; color: #9ca3af; }
+.ip-info-stat-divider { width: 1px; height: 36px; background: #e5e7eb; }
+
+.ip-upgrade-card-btn {
+  width: 100%; padding: 12px; border: none; border-radius: 10px;
+  background: linear-gradient(135deg, #1ba8d5, #0ea5e9);
+  color: #fff; font-size: 14px; font-weight: 700;
+  cursor: pointer; font-family: inherit;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  transition: opacity 0.15s;
+}
+.ip-upgrade-card-btn:hover { opacity: 0.9; }
+
+/* ── Logout Modal ── */
+.ip-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45);
+  z-index: 500; display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.ip-modal {
+  background: #fff; border-radius: 20px; padding: 32px 28px 24px;
+  width: 100%; max-width: 380px; text-align: center;
+  animation: ipModalIn 0.2s ease; box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+}
+@keyframes ipModalIn {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.ip-modal-icon {
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 14px;
+}
+.ip-modal-icon.logout { background: #fee2e2; color: #ef4444; }
+.ip-modal-title { font-size: 22px; font-weight: 800; margin: 0 0 8px; }
+.ip-modal-title.logout { color: #ef4444; }
+.ip-modal-sub   { font-size: 14px; color: #6b7280; margin: 0 0 24px; line-height: 1.6; }
+.ip-modal-actions { display: flex; gap: 12px; }
+.ip-modal-cancel {
+  flex: 1; padding: 12px; border: 1.5px solid #e5e7eb; border-radius: 10px;
+  background: #fff; font-size: 14px; font-weight: 600; color: #374151;
+  cursor: pointer; font-family: inherit;
+}
+.ip-modal-confirm {
+  flex: 1; padding: 12px; border: none; border-radius: 10px;
+  background: #ef4444; font-size: 14px; font-weight: 700; color: #fff;
+  cursor: pointer; font-family: inherit;
+}
+
+/* ════════════════════════════════════════════
+   SUB PAGES SHARED
+════════════════════════════════════════════ */
+.ip-sub-page {
+  padding: 28px 32px;
+  min-height: 100%;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #f8fafc;
+}
+.ip-sub-header {
+  display: flex; align-items: center; gap: 14px; margin-bottom: 24px;
+}
+.ip-sub-back {
+  width: 36px; height: 36px; border-radius: 9px;
+  border: 1px solid #e5e7eb; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #374151; flex-shrink: 0;
+  transition: all 0.15s;
+}
+.ip-sub-back:hover { background: #f0f9ff; border-color: #1ba8d5; color: #1ba8d5; }
+.ip-sub-title {
+  font-size: 22px; font-weight: 800; color: #111827; margin: 0;
+}
+.ip-sub-card {
+  background: #fff; border-radius: 16px;
+  border: 1px solid #f0f2f5; box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  padding: 28px 32px; max-width: 640px;
+}
+
+/* ── Legal sections ── */
+.ip-legal-section { margin-bottom: 22px; }
+.ip-legal-section:last-child { margin-bottom: 0; }
+.ip-legal-title { font-size: 14px; font-weight: 700; color: #111827; margin: 0 0 6px; }
+.ip-legal-text  { font-size: 13.5px; color: #6b7280; line-height: 1.7; margin: 0; }
+
+/* ── Notification settings ── */
+.ip-notif-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 0; border-bottom: 1px solid #f3f4f6;
+}
+.ip-notif-row:last-child { border-bottom: none; }
+.ip-notif-label { font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 3px; }
+.ip-notif-sub   { font-size: 12.5px; color: #9ca3af; }
+
+/* Toggle */
+.ip-toggle {
+  width: 46px; height: 26px; border-radius: 13px;
+  background: #d1d5db; border: none; cursor: pointer;
+  position: relative; transition: background 0.2s; padding: 0; flex-shrink: 0;
+}
+.ip-toggle.on { background: #1ba8d5; }
+.ip-toggle-thumb {
+  position: absolute; top: 3px; left: 3px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: #fff; transition: left 0.2s; box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.ip-toggle.on .ip-toggle-thumb { left: 23px; }
+
+/* ── Language ── */
+.ip-lang-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-bottom: 1px solid #f3f4f6;
+  cursor: pointer; transition: background 0.12s;
+  background: none; border-left: none; border-right: none; border-top: none;
+  width: 100%; text-align: left; font-family: inherit;
+  font-size: 14px; font-weight: 500; color: #374151;
+}
+.ip-lang-item:last-child { border-bottom: none; }
+.ip-lang-item:hover { background: #f8fafc; }
+.ip-lang-item.selected { background: #1ba8d5; color: #fff; font-weight: 700; }
+.ip-lang-item.selected:hover { background: #1596be; }
+.ip-lang-check {
+  width: 22px; height: 22px; border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+  display: flex; align-items: center; justify-content: center;
+}
+
+/* ── Password fields ── */
+.ip-pw-field { margin-bottom: 18px; }
+.ip-pw-label { display: block; font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 7px; }
+.ip-pw-input-wrap { position: relative; display: flex; align-items: center; }
+.ip-pw-input {
+  width: 100%; padding: 11px 44px 11px 14px;
+  border: 1.5px solid #e5e7eb; border-radius: 10px;
+  font-size: 14px; color: #111827; background: #fff;
+  outline: none; transition: border-color 0.15s, box-shadow 0.15s;
+  box-sizing: border-box; font-family: inherit;
+}
+.ip-pw-input:focus, .ip-pw-input.focused {
+  border-color: #1ba8d5; box-shadow: 0 0 0 3px rgba(27,168,213,0.1);
+}
+.ip-pw-input::placeholder { color: #9ca3af; }
+.ip-pw-eye {
+  position: absolute; right: 12px;
+  background: none; border: none; cursor: pointer;
+  display: flex; align-items: center; padding: 4px;
+}
+.ip-pw-forgot {
+  display: block; text-align: right; margin-bottom: 20px;
+  font-size: 13px; font-weight: 600; color: #1ba8d5;
+  background: none; border: none; cursor: pointer; font-family: inherit;
+}
+.ip-pw-forgot:hover { text-decoration: underline; }
+.ip-pw-submit-btn {
+  width: 100%; padding: 13px; border: none; border-radius: 10px;
+  background: #1ba8d5; color: #fff; font-size: 15px; font-weight: 700;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.ip-pw-submit-btn:hover { background: #1596be; }
+.ip-pw-submit-btn.flex1 { flex: 1; width: auto; }
+.ip-pw-actions { display: flex; gap: 12px; margin-top: 8px; }
+.ip-pw-cancel-btn {
+  flex: 1; padding: 13px; border: 1.5px solid #e5e7eb; border-radius: 10px;
+  background: #fff; font-size: 15px; font-weight: 600; color: #374151;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.ip-pw-cancel-btn:hover { background: #f3f4f6; }
+
+/* OTP boxes */
+.ip-otp-row { display: flex; gap: 12px; margin-top: 4px; }
+.ip-otp-box {
+  width: 52px; height: 52px; border-radius: 10px;
+  border: 1.5px solid #e5e7eb; background: #fff;
+  font-size: 20px; font-weight: 700; color: #111827;
+  text-align: center; outline: none; font-family: inherit;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+.ip-otp-box:focus { border-color: #1ba8d5; box-shadow: 0 0 0 3px rgba(27,168,213,0.1); }
+
+/* ── Upgrade / Pro Plan ── */
+.ip-upgrade-page { background: #f8fafc; }
+.ip-upgrade-hero {
+  background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 50%, #dbeafe 100%);
+  border-radius: 16px; padding: 40px 32px; text-align: center;
+  margin-bottom: 24px; position: relative; overflow: hidden;
+}
+.ip-upgrade-bolt {
+  margin-bottom: 12px;
+  filter: drop-shadow(0 4px 12px rgba(245,158,11,0.4));
+}
+.ip-upgrade-title { font-size: 26px; font-weight: 800; color: #111827; margin: 0 0 8px; }
+.ip-upgrade-sub   { font-size: 14px; color: #6b7280; margin: 0; }
+
+.ip-upgrade-card {
+  background: #fff; border-radius: 16px;
+  border: 1px solid #f0f2f5; box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  padding: 28px 32px; max-width: 560px;
+}
+.ip-upgrade-features-title { font-size: 15px; font-weight: 700; color: #111827; margin: 0 0 14px; }
+.ip-upgrade-features { list-style: none; padding: 0; margin: 0 0 24px; }
+.ip-upgrade-feature {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13.5px; color: #374151; padding: 6px 0;
+  border-bottom: 1px solid #f8fafc;
+}
+.ip-upgrade-feature:last-child { border-bottom: none; }
+.ip-upgrade-feature-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #1ba8d5; flex-shrink: 0;
+}
+
+/* Billing toggle */
+.ip-billing-row { display: flex; gap: 12px; margin-bottom: 20px; }
+.ip-billing-option {
+  flex: 1; display: flex; align-items: center; gap: 12px;
+  padding: 14px 16px; border: 2px solid #e5e7eb; border-radius: 12px;
+  background: #fff; cursor: pointer; font-family: inherit;
+  transition: all 0.15s; text-align: left;
+}
+.ip-billing-option:hover { border-color: #1ba8d5; background: #f0f9ff; }
+.ip-billing-option.selected { border-color: #1ba8d5; background: #f0f9ff; }
+.ip-billing-radio {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid #d1d5db; display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: border-color 0.15s;
+}
+.ip-billing-option.selected .ip-billing-radio { border-color: #1ba8d5; }
+.ip-billing-radio-inner {
+  width: 8px; height: 8px; border-radius: 50%; background: transparent; transition: background 0.15s;
+}
+.ip-billing-radio-inner.on { background: #1ba8d5; }
+.ip-billing-label { font-size: 13px; font-weight: 600; color: #374151; margin-bottom: 2px; }
+.ip-billing-price { font-size: 18px; font-weight: 800; color: #111827; }
+.ip-billing-price span { font-size: 12px; font-weight: 500; color: #9ca3af; }
+
+.ip-upgrade-submit-btn {
+  width: 100%; padding: 14px; border: none; border-radius: 12px;
+  background: #1ba8d5; color: #fff; font-size: 16px; font-weight: 700;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.ip-upgrade-submit-btn:hover { background: #1596be; }
+
+/* ════════════════════════════════════════════
+   RESPONSIVE
+════════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .ip-layout { grid-template-columns: 380px 1fr; }
+}
+@media (max-width: 900px) {
+  .ip-layout { grid-template-columns: 1fr; }
+  .ip-right { position: static; }
+}
+@media (max-width: 600px) {
+  .ip-page, .ip-sub-page { padding: 16px; }
+  .ip-sub-card { padding: 20px 16px; }
+  .ip-upgrade-card { padding: 20px 16px; }
+  .ip-upgrade-hero { padding: 28px 16px; }
+  .ip-billing-row { flex-direction: column; }
+  .ip-otp-row { gap: 8px; }
+  .ip-otp-box { width: 44px; height: 44px; font-size: 18px; }
+  .ip-pw-actions { flex-direction: column; }
+}

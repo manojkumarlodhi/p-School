@@ -1,0 +1,231 @@
+/* ── Create Instructor Plan ── prefix: cip2- */
+
+.cip2-page { min-height: 100%; background: #f4f6f9; }
+
+/* ── Page header ── */
+.cip2-page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; background: #fff; border-bottom: 1px solid #e8eaf0;
+  flex-wrap: wrap; gap: 8px;
+}
+.cip2-header-left { display: flex; align-items: center; gap: 12px; }
+.cip2-back-btn {
+  background: none; border: none; cursor: pointer; color: #374151;
+  display: flex; align-items: center; padding: 5px; border-radius: 7px;
+  transition: background 0.15s;
+}
+.cip2-back-btn:hover { background: #f3f4f6; }
+.cip2-page-title { font-size: 20px; font-weight: 700; color: #111827; margin: 0; }
+.cip2-breadcrumb { font-size: 12px; color: #9ca3af; white-space: nowrap; }
+
+/* ── Body ── */
+.cip2-body { padding: 24px; }
+
+/* ── Form card ── */
+.cip2-form {
+  background: #fff; border-radius: 14px; border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05); padding: 28px 28px 100px;
+  display: flex; flex-direction: column; gap: 22px;
+  max-width: 700px;
+}
+
+/* ── Field ── */
+.cip2-field { display: flex; flex-direction: column; gap: 7px; }
+.cip2-label { font-size: 12.5px; color: #6b7280; font-weight: 500; }
+
+.cip2-input, .cip2-textarea {
+  border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 10px 14px;
+  font-size: 13.5px; color: #374151; font-family: inherit; outline: none;
+  background: #fff; transition: border-color 0.15s; width: 100%; box-sizing: border-box;
+}
+.cip2-input:focus, .cip2-textarea:focus { border-color: #1ba8d5; }
+.cip2-textarea { resize: vertical; }
+
+/* ── Custom dropdown ── */
+.cip2-dropdown-wrap { position: relative; }
+.cip2-select-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 10px 14px;
+  font-size: 13.5px; font-family: inherit; background: #fff; cursor: pointer;
+  outline: none; transition: border-color 0.15s; width: 100%; text-align: left;
+}
+.cip2-select-btn:hover, .cip2-select-btn--open { border-color: #1ba8d5; }
+.cip2-select-ph { color: #9ca3af; }
+.cip2-select-val { color: #374151; }
+.cip2-chevron { flex-shrink: 0; color: #6b7280; transition: transform 0.2s; }
+.cip2-chevron--up { transform: rotate(180deg); }
+.cip2-dropdown-list {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 20;
+  list-style: none; margin: 0; padding: 4px 0; overflow: hidden;
+}
+.cip2-dropdown-item {
+  padding: 10px 16px; font-size: 13.5px; color: #374151;
+  cursor: pointer; transition: background 0.12s;
+}
+.cip2-dropdown-item:hover { background: #f0f9ff; color: #1ba8d5; }
+.cip2-dropdown-item--active { background: #1ba8d5; color: #fff; font-weight: 600; }
+.cip2-dropdown-item--active:hover { background: #1596be; }
+
+/* ── Pricing row — 2 cols ── */
+.cip2-pricing-row {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px;
+}
+.cip2-price-col { display: flex; flex-direction: column; gap: 8px; }
+.cip2-price-header {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cip2-price-input-wrap {
+  display: flex; align-items: center;
+  border: 1.5px solid #e5e7eb; border-radius: 8px;
+  padding: 9px 14px; background: #fff; transition: border-color 0.15s;
+}
+.cip2-price-input-wrap:focus-within { border-color: #1ba8d5; }
+.cip2-currency { font-size: 13.5px; color: #6b7280; margin-right: 4px; }
+.cip2-price-input {
+  border: none; outline: none; font-size: 13.5px; color: #374151;
+  font-family: inherit; background: transparent; width: 100%;
+}
+.cip2-price-input:disabled { color: #9ca3af; }
+
+/* ── Toggle ── */
+.cip2-toggle {
+  width: 42px; height: 24px; border-radius: 12px; border: none;
+  background: #d1d5db; cursor: pointer; position: relative;
+  transition: background 0.2s; padding: 0; flex-shrink: 0;
+}
+.cip2-toggle--on { background: #1ba8d5; }
+.cip2-toggle-thumb {
+  position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%; background: #fff;
+  transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.cip2-toggle--on .cip2-toggle-thumb { transform: translateX(18px); }
+
+/* ── Revenue Share Slider ── */
+.cip2-slider-row {
+  display: flex; align-items: center; gap: 14px;
+}
+
+.cip2-slider {
+  flex: 1;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 6px;
+  border-radius: 6px;
+  outline: none;
+  cursor: pointer;
+  background: linear-gradient(
+    to right,
+    #1ba8d5 0%,
+    #1ba8d5 var(--pct, 70%),
+    #e5e7eb var(--pct, 70%),
+    #e5e7eb 100%
+  );
+}
+
+.cip2-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: #1ba8d5;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #1ba8d5, 0 2px 6px rgba(27,168,213,0.35);
+  cursor: pointer;
+  transition: box-shadow 0.15s;
+}
+.cip2-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 3px #1ba8d5, 0 2px 8px rgba(27,168,213,0.45);
+}
+
+.cip2-slider::-moz-range-thumb {
+  width: 20px; height: 20px;
+  border-radius: 50%;
+  background: #1ba8d5;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px #1ba8d5;
+  cursor: pointer;
+}
+
+.cip2-slider-value {
+  min-width: 48px; height: 32px;
+  display: flex; align-items: center; justify-content: center;
+  background: #e0f7ff; border: 1.5px solid #1ba8d5;
+  border-radius: 8px; font-size: 13px; font-weight: 700;
+  color: #1ba8d5; flex-shrink: 0;
+}
+
+.cip2-slider-hint {
+  font-size: 11.5px; color: #9ca3af; margin: 0;
+}
+
+/* ── Features ── */
+.cip2-features-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.cip2-add-feature-btn {
+  font-size: 13px; font-weight: 600; color: #1ba8d5; background: none;
+  border: none; cursor: pointer; font-family: inherit; padding: 0;
+  transition: opacity 0.15s;
+}
+.cip2-add-feature-btn:hover { opacity: 0.75; }
+.cip2-features-list { display: flex; flex-direction: column; gap: 8px; }
+.cip2-feature-row { display: flex; align-items: center; gap: 10px; }
+.cip2-feature-input {
+  flex: 1; border: 1.5px solid #e5e7eb; border-radius: 8px;
+  padding: 10px 14px; font-size: 13.5px; color: #374151;
+  font-family: inherit; outline: none; background: #fff;
+  transition: border-color 0.15s;
+}
+.cip2-feature-input:focus { border-color: #1ba8d5; }
+.cip2-feature-del {
+  width: 32px; height: 32px; border-radius: 7px; border: 1px solid #fecaca;
+  background: #fff5f5; color: #ef4444; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background 0.15s;
+}
+.cip2-feature-del:hover { background: #fee2e2; }
+
+/* ── Admin features ── */
+.cip2-admin-list {
+  background: #f9fafb; border: 1px solid #e8eaf0;
+  border-radius: 10px; overflow: hidden;
+}
+.cip2-admin-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-bottom: 1px solid #f0f2f5; gap: 12px;
+}
+.cip2-admin-row:last-child { border-bottom: none; }
+.cip2-admin-info { display: flex; flex-direction: column; gap: 3px; }
+.cip2-admin-label { font-size: 13.5px; font-weight: 600; color: #111827; }
+.cip2-admin-sub { font-size: 12px; color: #9ca3af; }
+
+/* ── Footer ── */
+.cip2-footer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 12px; padding: 14px 24px;
+  background: #fff; border-top: 1px solid #e8eaf0; z-index: 50;
+}
+.cip2-btn-cancel {
+  padding: 10px 28px; background: #fff; border: 1.5px solid #d1d5db;
+  border-radius: 8px; font-size: 14px; font-weight: 500; color: #374151;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.cip2-btn-cancel:hover { background: #f9fafb; }
+.cip2-btn-save {
+  padding: 10px 32px; background: #1ba8d5; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 600; color: #fff; cursor: pointer;
+  font-family: inherit; transition: background 0.15s;
+}
+.cip2-btn-save:hover { background: #1596be; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .cip2-body { padding: 16px; }
+  .cip2-form { padding: 20px 16px 100px; }
+  .cip2-pricing-row { grid-template-columns: 1fr; }
+  .cip2-page-header { flex-direction: column; align-items: flex-start; }
+}

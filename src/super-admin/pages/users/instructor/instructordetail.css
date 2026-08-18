@@ -1,0 +1,394 @@
+.idet-page {
+  min-height: 100%;
+  background: #f4f6f9;
+}
+
+/* ── Page header ── */
+.idet-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.idet-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.idet-back-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  border-radius: 7px;
+  transition: background 0.15s;
+}
+.idet-back-btn:hover { background: #f3f4f6; }
+
+.idet-page-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.idet-breadcrumb {
+  font-size: 12px;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* ── Body ── */
+.idet-body {
+  padding: 20px 24px;
+}
+
+/* ── Card ── */
+.idet-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  padding: 28px 32px;
+}
+
+/* ── Profile row ── */
+.idet-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 22px;
+  position: relative;
+}
+
+.idet-avatar {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2.5px solid #e0f2fe;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.idet-profile-info { flex: 1; }
+
+.idet-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px;
+}
+
+.idet-role {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.idet-verified-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: inline-block;
+  padding: 5px 18px;
+  border-radius: 20px;
+  font-size: 12.5px;
+  font-weight: 600;
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+/* ── Divider ── */
+.idet-divider {
+  height: 1px;
+  background: #f0f2f5;
+  margin: 0 0 22px;
+}
+
+/* ── Info grid row 1 — 4 columns ── */
+.idet-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px 24px;
+  margin-bottom: 22px;
+}
+
+/* ── Info grid row 2 — status | rating | address ── */
+.idet-info-grid--row2 {
+  grid-template-columns: 120px 160px 1fr;
+  align-items: start;
+  margin-bottom: 22px;
+}
+
+.idet-info-label {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.idet-info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  line-height: 1.4;
+}
+
+/* Toggle */
+.idet-toggle {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+  margin-top: 2px;
+}
+.idet-toggle input { opacity: 0; width: 0; height: 0; }
+
+.idet-toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 26px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.idet-toggle input:checked + .idet-toggle-slider { background: #1ba8d5; }
+
+.idet-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+}
+.idet-toggle input:checked + .idet-toggle-slider::before {
+  transform: translateX(18px);
+}
+
+/* Rating */
+.idet-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+  margin-top: 2px;
+}
+
+/* ── Bank Details ── */
+.idet-bank-section {
+  margin-bottom: 24px;
+}
+
+.idet-bank-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 14px;
+}
+
+.idet-bank-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px 24px;
+}
+
+/* ── Stats cards ── */
+.idet-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+
+.idet-stat-card {
+  border-radius: 12px;
+  padding: 18px 20px 18px 20px;
+  position: relative;
+  min-height: 88px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.idet-stat-card--blue  { background: #e0f7ff; border: 1px solid #b3ecff; }
+.idet-stat-card--green { background: #f0fdf4; border: 1px solid #bbf7d0; }
+.idet-stat-card--yellow{ background: #fef9c3; border: 1px solid #fde68a; }
+
+.idet-stat-label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 8px;
+  font-weight: 400;
+}
+
+.idet-stat-value {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+}
+
+.idet-stat-value--green { color: #16a34a; }
+
+/* Arrow button — bottom right of stat card */
+.idet-stat-arrow {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.idet-stat-arrow:hover { opacity: 0.85; transform: scale(1.08); }
+
+.idet-stat-arrow--blue   { background: #1ba8d5; color: #fff; }
+.idet-stat-arrow--green  { background: #16a34a; color: #fff; }
+.idet-stat-arrow--yellow { background: #f59e0b; color: #fff; }
+
+/* ── Documents section ── */
+.idet-docs-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px;
+}
+
+.idet-docs-table-wrap { overflow-x: auto; }
+
+.idet-docs-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.idet-docs-table th {
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  background: #fafafa;
+  border-bottom: 1px solid #f0f2f5;
+  white-space: nowrap;
+}
+
+.idet-docs-table td {
+  padding: 14px 16px;
+  color: #374151;
+  border-bottom: 1px solid #f8f9fa;
+  white-space: nowrap;
+  vertical-align: middle;
+  font-size: 13.5px;
+}
+
+.idet-docs-table tr:last-child td { border-bottom: none; }
+.idet-docs-table tr:hover td { background: #f9fafb; }
+
+/* Doc status badge */
+.idet-doc-badge {
+  display: inline-block;
+  padding: 4px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.idet-doc-badge--verified {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.idet-doc-badge--pending {
+  background: #fffbeb;
+  color: #d97706;
+  border: 1px solid #fde68a;
+}
+
+.idet-doc-badge--rejected {
+  background: #fff1f2;
+  color: #e11d48;
+  border: 1px solid #fecdd3;
+}
+
+/* Doc action buttons */
+.idet-doc-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.idet-doc-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 7px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.idet-doc-btn:hover {
+  background: #f0f9ff;
+  border-color: #1ba8d5;
+  color: #1ba8d5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1024px) {
+  .idet-info-grid { grid-template-columns: repeat(2, 1fr); }
+  .idet-info-grid--row2 { grid-template-columns: 120px 1fr; }
+  .idet-info-item--wide { grid-column: span 2; }
+}
+
+@media (max-width: 768px) {
+  .idet-body { padding: 16px; }
+  .idet-card { padding: 20px 18px; }
+  .idet-stats-row { grid-template-columns: 1fr 1fr; }
+  .idet-bank-grid { grid-template-columns: 1fr 1fr; }
+  .idet-page-header { flex-direction: column; align-items: flex-start; }
+}
+
+@media (max-width: 540px) {
+  .idet-info-grid { grid-template-columns: 1fr 1fr; }
+  .idet-info-grid--row2 { grid-template-columns: 1fr 1fr; }
+  .idet-info-item--wide { grid-column: span 2; }
+  .idet-stats-row { grid-template-columns: 1fr; }
+  .idet-bank-grid { grid-template-columns: 1fr; }
+  .idet-profile-row { flex-wrap: wrap; }
+  .idet-verified-badge { position: static; margin-left: auto; }
+}
+
+@media (max-width: 380px) {
+  .idet-info-grid { grid-template-columns: 1fr; }
+  .idet-info-grid--row2 { grid-template-columns: 1fr; }
+  .idet-info-item--wide { grid-column: span 1; }
+}

@@ -1,0 +1,157 @@
+/* ── Virtual Lab Management ── prefix: vlm- */
+
+.vlm-page {
+  min-height: 100%;
+  background: #f4f6f9;
+}
+
+/* ── Page header ── */
+.vlm-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px 14px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.vlm-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.vlm-breadcrumb {
+  font-size: 12px;
+  color: #9ca3af;
+  white-space: nowrap;
+}
+
+/* ── Body ── */
+.vlm-body {
+  padding: 20px 24px;
+}
+
+/* ── Card ── */
+.vlm-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* ── Toolbar ── */
+.vlm-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #f0f2f5;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vlm-toolbar-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.vlm-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Search */
+.vlm-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 7px 14px;
+  background: #fff;
+  color: #9ca3af;
+  min-width: 200px;
+}
+
+.vlm-search-input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #374151;
+  background: transparent;
+  width: 100%;
+  font-family: inherit;
+}
+.vlm-search-input::placeholder { color: #9ca3af; }
+
+/* Filter button */
+.vlm-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s;
+}
+.vlm-filter-btn:hover { border-color: #1ba8d5; color: #1ba8d5; }
+
+/* Add Lab button */
+.vlm-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: #e0f7ff;
+  border: 1.5px solid #1ba8d5;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1ba8d5;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.vlm-add-btn:hover { background: #b3ecff; }
+
+/* ── Empty / Coming Soon state ── */
+.vlm-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px 72px;
+  gap: 20px;
+}
+
+.vlm-empty-text {
+  font-size: 15px;
+  color: #374151;
+  text-align: center;
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .vlm-body { padding: 14px 16px; }
+  .vlm-toolbar { flex-direction: column; align-items: flex-start; }
+  .vlm-toolbar-actions { width: 100%; flex-wrap: wrap; }
+  .vlm-search { min-width: unset; flex: 1; }
+  .vlm-page-header { flex-direction: column; align-items: flex-start; }
+}

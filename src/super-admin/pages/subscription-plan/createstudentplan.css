@@ -1,0 +1,202 @@
+/* ── Create Student Plan ── prefix: csp- */
+
+.csp-page { min-height: 100%; background: #f4f6f9; }
+
+/* ── Page header ── */
+.csp-page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; background: #fff; border-bottom: 1px solid #e8eaf0;
+  flex-wrap: wrap; gap: 8px;
+}
+.csp-header-left { display: flex; align-items: center; gap: 12px; }
+.csp-back-btn {
+  background: none; border: none; cursor: pointer; color: #374151;
+  display: flex; align-items: center; padding: 5px; border-radius: 7px;
+  transition: background 0.15s;
+}
+.csp-back-btn:hover { background: #f3f4f6; }
+.csp-page-title { font-size: 20px; font-weight: 700; color: #111827; margin: 0; }
+.csp-breadcrumb { font-size: 12px; color: #9ca3af; white-space: nowrap; }
+
+/* ── Body ── */
+.csp-body { padding: 24px; }
+
+/* ── Form card ── */
+.csp-form {
+  background: #fff; border-radius: 14px; border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05); padding: 28px 28px 100px;
+  display: flex; flex-direction: column; gap: 22px;
+  max-width: 700px;
+}
+
+/* ── Field ── */
+.csp-field { display: flex; flex-direction: column; gap: 7px; }
+.csp-label { font-size: 12.5px; color: #6b7280; font-weight: 500; }
+
+.csp-input, .csp-textarea {
+  border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 10px 14px;
+  font-size: 13.5px; color: #374151; font-family: inherit; outline: none;
+  background: #fff; transition: border-color 0.15s; width: 100%; box-sizing: border-box;
+}
+.csp-input:focus, .csp-textarea:focus { border-color: #1ba8d5; }
+.csp-textarea { resize: vertical; }
+
+/* ── Custom dropdown ── */
+.csp-dropdown-wrap { position: relative; }
+.csp-select-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 10px 14px;
+  font-size: 13.5px; font-family: inherit; background: #fff; cursor: pointer;
+  outline: none; transition: border-color 0.15s; width: 100%; text-align: left;
+}
+.csp-select-btn:hover, .csp-select-btn--open { border-color: #1ba8d5; }
+.csp-select-ph { color: #9ca3af; }
+.csp-select-val { color: #374151; }
+.csp-chevron { flex-shrink: 0; color: #6b7280; transition: transform 0.2s; }
+.csp-chevron--up { transform: rotate(180deg); }
+.csp-dropdown-list {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 20;
+  list-style: none; margin: 0; padding: 4px 0; overflow: hidden;
+}
+.csp-dropdown-item {
+  padding: 11px 16px; font-size: 13.5px; color: #374151;
+  cursor: pointer; transition: background 0.12s;
+}
+.csp-dropdown-item:hover { background: #f0f9ff; color: #1ba8d5; }
+.csp-dropdown-item--active { background: #1ba8d5; color: #fff; font-weight: 600; }
+.csp-dropdown-item--active:hover { background: #1596be; }
+
+/* ── Pricing row — 3 cols ── */
+.csp-pricing-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.csp-price-col { display: flex; flex-direction: column; gap: 8px; }
+.csp-price-header { display: flex; align-items: center; justify-content: space-between; }
+.csp-price-input-wrap {
+  display: flex; align-items: center;
+  border: 1.5px solid #e5e7eb; border-radius: 8px;
+  padding: 9px 14px; background: #fff; transition: border-color 0.15s;
+}
+.csp-price-input-wrap:focus-within { border-color: #1ba8d5; }
+.csp-currency { font-size: 13.5px; color: #6b7280; margin-right: 4px; }
+.csp-price-input {
+  border: none; outline: none; font-size: 13.5px; color: #374151;
+  font-family: inherit; background: transparent; width: 100%;
+}
+.csp-price-input:disabled { color: #9ca3af; }
+
+/* ── Toggle ── */
+.csp-toggle {
+  width: 42px; height: 24px; border-radius: 12px; border: none;
+  background: #d1d5db; cursor: pointer; position: relative;
+  transition: background 0.2s; padding: 0; flex-shrink: 0;
+}
+.csp-toggle--on { background: #1ba8d5; }
+.csp-toggle-thumb {
+  position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%; background: #fff;
+  transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.csp-toggle--on .csp-toggle-thumb { transform: translateX(18px); }
+
+/* ── Radio group ── */
+.csp-radio-group { display: flex; align-items: center; gap: 24px; }
+.csp-radio-label {
+  display: flex; align-items: center; gap: 8px;
+  cursor: pointer; user-select: none;
+}
+.csp-radio-circle {
+  width: 18px; height: 18px; border-radius: 50%;
+  border: 2px solid #d1d5db; background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: border-color 0.15s;
+}
+.csp-radio-circle--checked { border-color: #1ba8d5; background: #fff; }
+.csp-radio-dot {
+  width: 9px; height: 9px; border-radius: 50%; background: #1ba8d5;
+}
+.csp-radio-input {
+  position: absolute; opacity: 0; width: 0; height: 0; pointer-events: none;
+}
+.csp-radio-text { font-size: 13.5px; color: #374151; }
+
+/* ── Trial card ── */
+.csp-trial-card {
+  background: #f9fafb; border: 1px solid #e8eaf0;
+  border-radius: 10px; padding: 14px 16px;
+}
+.csp-trial-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+}
+.csp-trial-title { font-size: 13.5px; font-weight: 600; color: #111827; margin: 0 0 3px; }
+.csp-trial-sub { font-size: 12px; color: #9ca3af; margin: 0; }
+
+/* ── Features ── */
+.csp-features-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.csp-add-feature-btn {
+  font-size: 13px; font-weight: 600; color: #1ba8d5; background: none;
+  border: none; cursor: pointer; font-family: inherit; padding: 0;
+  transition: opacity 0.15s;
+}
+.csp-add-feature-btn:hover { opacity: 0.75; }
+.csp-features-list { display: flex; flex-direction: column; gap: 8px; }
+.csp-feature-row { display: flex; align-items: center; gap: 10px; }
+.csp-feature-input {
+  flex: 1; border: 1.5px solid #e5e7eb; border-radius: 8px;
+  padding: 10px 14px; font-size: 13.5px; color: #374151;
+  font-family: inherit; outline: none; background: #fff;
+  transition: border-color 0.15s;
+}
+.csp-feature-input:focus { border-color: #1ba8d5; }
+.csp-feature-del {
+  width: 32px; height: 32px; border-radius: 7px; border: 1px solid #fecaca;
+  background: #fff5f5; color: #ef4444; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background 0.15s;
+}
+.csp-feature-del:hover { background: #fee2e2; }
+
+/* ── Admin features ── */
+.csp-admin-list {
+  background: #f9fafb; border: 1px solid #e8eaf0;
+  border-radius: 10px; overflow: hidden;
+}
+.csp-admin-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-bottom: 1px solid #f0f2f5; gap: 12px;
+}
+.csp-admin-row:last-child { border-bottom: none; }
+.csp-admin-info { display: flex; flex-direction: column; gap: 3px; }
+.csp-admin-label { font-size: 13.5px; font-weight: 600; color: #111827; }
+.csp-admin-sub { font-size: 12px; color: #9ca3af; }
+
+/* ── Footer ── */
+.csp-footer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 12px; padding: 14px 24px;
+  background: #fff; border-top: 1px solid #e8eaf0; z-index: 50;
+}
+.csp-btn-cancel {
+  padding: 10px 28px; background: #fff; border: 1.5px solid #d1d5db;
+  border-radius: 8px; font-size: 14px; font-weight: 500; color: #374151;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.csp-btn-cancel:hover { background: #f9fafb; }
+.csp-btn-save {
+  padding: 10px 32px; background: #1ba8d5; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 600; color: #fff; cursor: pointer;
+  font-family: inherit; transition: background 0.15s;
+}
+.csp-btn-save:hover { background: #1596be; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .csp-body { padding: 16px; }
+  .csp-form { padding: 20px 16px 100px; }
+  .csp-pricing-row { grid-template-columns: 1fr; }
+  .csp-page-header { flex-direction: column; align-items: flex-start; }
+  .csp-radio-group { flex-direction: column; align-items: flex-start; gap: 12px; }
+}

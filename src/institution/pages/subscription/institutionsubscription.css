@@ -1,0 +1,360 @@
+/* ══════════════════════════════════════════
+   Institution Subscription   prefix: isub-
+══════════════════════════════════════════ */
+
+.isub-page {
+  min-height: 100%;
+  background: #f4f6f9;
+  font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ── Page header ── */
+.isub-page-header {
+  padding: 14px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.isub-page-title { font-size: 20px; font-weight: 700; color: #111827; margin: 0; }
+.isub-back-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: none; border: none; cursor: pointer;
+  font-size: 18px; font-weight: 700; color: #111827;
+  font-family: inherit; padding: 0; transition: color 0.15s;
+}
+.isub-back-btn:hover { color: #1ba8d5; }
+.isub-breadcrumb { font-size: 12px; color: #9ca3af; }
+
+/* ── Body ── */
+.isub-body { padding: 20px 24px 32px; display: flex; flex-direction: column; gap: 16px; }
+
+/* ══════════════════════════════════════════
+   ALERT BANNERS
+══════════════════════════════════════════ */
+.isub-alert {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 16px; border-radius: 8px; font-size: 13.5px; font-weight: 500;
+}
+.isub-alert-left { display: flex; align-items: center; gap: 10px; }
+.isub-alert--info   { background: #e0f7ff; color: #0e7490; border: 1px solid #b3e5f7; }
+.isub-alert--warn   { background: #fffbeb; color: #92400e; border: 1px solid #fde68a; }
+.isub-alert--danger { background: #fff5f5; color: #991b1b; border: 1px solid #fecaca; }
+.isub-alert-close {
+  background: none; border: none; cursor: pointer; color: inherit;
+  display: flex; align-items: center; opacity: 0.6; transition: opacity 0.15s;
+}
+.isub-alert-close:hover { opacity: 1; }
+
+/* ── Section title ── */
+.isub-section-title { font-size: 14.5px; font-weight: 700; color: #111827; margin: 0 0 12px; }
+
+/* ══════════════════════════════════════════
+   CURRENT PLAN CARD — blue gradient
+══════════════════════════════════════════ */
+.isub-plan-card {
+  position: relative;
+  background: linear-gradient(108deg, #17b8e8 0%, #1ba8d5 40%, #0e96c2 100%);
+  border-radius: 14px;
+  padding: 22px 24px 20px;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Decorative wave */
+.isub-plan-wave {
+  position: absolute;
+  bottom: -20px; right: -20px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  pointer-events: none;
+}
+
+.isub-plan-top {
+  display: flex; align-items: flex-start; justify-content: space-between;
+  margin-bottom: 16px;
+}
+.isub-plan-name { font-size: 20px; font-weight: 800; color: #fff; margin: 0 0 8px; }
+.isub-plan-badge {
+  display: inline-block; padding: 3px 12px; border-radius: 20px;
+  background: #22c55e; color: #fff; font-size: 12px; font-weight: 600;
+}
+.isub-plan-price { text-align: right; }
+.isub-plan-amount { font-size: 28px; font-weight: 800; color: #fff; }
+.isub-plan-period { font-size: 13px; color: rgba(255,255,255,0.8); display: block; }
+
+/* Meta row */
+.isub-plan-meta {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 16px;
+}
+.isub-plan-meta-label { font-size: 11px; color: rgba(255,255,255,0.75); margin-bottom: 3px; }
+.isub-plan-meta-value { font-size: 15px; font-weight: 700; color: #fff; }
+
+/* Progress bar */
+.isub-progress-row {
+  display: flex; justify-content: space-between; margin-bottom: 6px;
+}
+.isub-progress-label { font-size: 12px; color: rgba(255,255,255,0.85); }
+.isub-progress-track {
+  height: 8px; background: rgba(255,255,255,0.25); border-radius: 4px; overflow: hidden; margin-bottom: 16px;
+}
+.isub-progress-fill {
+  height: 100%; background: #fff; border-radius: 4px; transition: width 0.3s;
+}
+
+/* Plan actions */
+.isub-plan-actions {
+  display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.isub-btn-add-seats {
+  padding: 9px 18px; border: 2px solid #fff; border-radius: 8px;
+  background: transparent; color: #fff; font-size: 13.5px; font-weight: 600;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.isub-btn-add-seats:hover { background: rgba(255,255,255,0.15); }
+.isub-add-seats-hint { font-size: 11px; color: rgba(255,255,255,0.75); margin: 6px 0 0; }
+.isub-plan-action-btns { display: flex; gap: 10px; }
+.isub-btn-download {
+  display: flex; align-items: center; gap: 6px;
+  padding: 9px 16px; border: 2px solid #fff; border-radius: 8px;
+  background: transparent; color: #fff; font-size: 13px; font-weight: 600;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.isub-btn-download:hover { background: rgba(255,255,255,0.15); }
+.isub-btn-change {
+  padding: 9px 16px; border: none; border-radius: 8px;
+  background: #fff; color: #1ba8d5; font-size: 13px; font-weight: 700;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.isub-btn-change:hover { background: #f0f9ff; }
+
+/* ══════════════════════════════════════════
+   INVOICE CARD
+══════════════════════════════════════════ */
+.isub-invoice-card {
+  background: #fff; border-radius: 12px; border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden;
+}
+.isub-invoice-tabs {
+  display: flex; border-bottom: 1px solid #e8eaf0; padding: 0 20px;
+}
+.isub-invoice-tab {
+  padding: 13px 18px; font-size: 13.5px; font-weight: 500; color: #6b7280;
+  background: none; border: none; border-bottom: 2.5px solid transparent;
+  cursor: pointer; font-family: inherit; transition: color 0.15s, border-color 0.15s;
+}
+.isub-invoice-tab:hover { color: #1ba8d5; }
+.isub-invoice-tab.active { color: #1ba8d5; border-bottom-color: #1ba8d5; font-weight: 600; }
+
+.isub-invoice-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; border-bottom: 1px solid #f0f2f5; gap: 12px; flex-wrap: wrap;
+}
+.isub-invoice-title { font-size: 14.5px; font-weight: 700; color: #111827; margin: 0; }
+.isub-toolbar-right { display: flex; align-items: center; gap: 10px; }
+.isub-search-wrap {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid #e5e7eb; border-radius: 8px; padding: 7px 12px;
+  background: #fff; transition: border-color 0.15s;
+}
+.isub-search-wrap:focus-within { border-color: #1ba8d5; }
+.isub-search {
+  border: none; outline: none; font-size: 13px; color: #374151;
+  font-family: inherit; width: 160px; background: transparent;
+}
+.isub-search::placeholder { color: #9ca3af; }
+.isub-btn-filter {
+  display: flex; align-items: center; gap: 6px; padding: 8px 14px;
+  border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;
+  font-size: 13px; font-weight: 500; color: #374151; cursor: pointer;
+  font-family: inherit; transition: all 0.15s;
+}
+.isub-btn-filter:hover { border-color: #1ba8d5; background: #f0f9ff; color: #1ba8d5; }
+
+/* Table */
+.isub-table-wrap { overflow-x: auto; }
+.isub-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.isub-table th {
+  padding: 12px 16px; text-align: left; font-size: 12.5px; font-weight: 600;
+  color: #374151; background: #f9fafb; border-bottom: 1px solid #f0f2f5; white-space: nowrap;
+}
+.isub-table td {
+  padding: 13px 16px; color: #374151; border-bottom: 1px solid #f9fafb; vertical-align: middle;
+}
+.isub-table tr:last-child td { border-bottom: none; }
+.isub-table tr:hover td { background: #fafbfc; }
+
+.isub-status {
+  display: inline-block; padding: 3px 10px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+}
+.isub-status--paid    { background: #dcfce7; color: #16a34a; }
+.isub-status--pending { background: #fef3c7; color: #d97706; }
+.isub-status--success { background: #dcfce7; color: #16a34a; }
+
+.isub-action-btn {
+  width: 30px; height: 30px; border-radius: 6px; border: 1px solid #e5e7eb;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: border-color 0.15s, background 0.15s;
+}
+.isub-action-btn:hover { border-color: #1ba8d5; background: #f0f9ff; }
+
+/* Pagination */
+.isub-pagination {
+  display: flex; align-items: center; justify-content: space-between; padding: 14px 20px;
+  border-top: 1px solid #f0f2f5;
+}
+.isub-page-btn--nav {
+  display: flex; align-items: center; gap: 6px; padding: 7px 14px;
+  border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;
+  font-size: 13px; font-weight: 500; color: #374151; cursor: pointer;
+  font-family: inherit; transition: all 0.15s;
+}
+.isub-page-btn--nav:hover:not(:disabled) { border-color: #1ba8d5; color: #1ba8d5; background: #f0f9ff; }
+.isub-page-btn--nav:disabled { opacity: 0.4; cursor: not-allowed; }
+.isub-page-numbers { display: flex; align-items: center; gap: 4px; }
+.isub-page-num {
+  width: 32px; height: 32px; border-radius: 6px; border: 1px solid #e5e7eb;
+  background: #fff; font-size: 13px; font-weight: 500; color: #374151;
+  cursor: pointer; font-family: inherit; transition: all 0.15s;
+}
+.isub-page-num:hover { border-color: #1ba8d5; color: #1ba8d5; }
+.isub-page-num.active { background: #1ba8d5; border-color: #1ba8d5; color: #fff; }
+.isub-page-ellipsis { font-size: 13px; color: #9ca3af; padding: 0 4px; }
+
+/* ══════════════════════════════════════════
+   ADD SEATS MODAL
+══════════════════════════════════════════ */
+.isub-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 1000;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.isub-modal {
+  background: #fff; border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  width: 100%; max-width: 480px; overflow: hidden;
+}
+.isub-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px; border-bottom: 1px solid #f0f2f5;
+}
+.isub-modal-title { font-size: 18px; font-weight: 700; color: #111827; margin: 0; }
+.isub-modal-close {
+  width: 32px; height: 32px; border-radius: 8px; border: 1px solid #e5e7eb;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #6b7280; transition: background 0.15s;
+}
+.isub-modal-close:hover { background: #f3f4f6; }
+.isub-modal-body { padding: 20px 24px 24px; }
+.isub-modal-field { margin-bottom: 16px; }
+.isub-modal-label { font-size: 12.5px; font-weight: 500; color: #374151; display: block; margin-bottom: 6px; }
+.isub-modal-input {
+  width: 100%; height: 48px; padding: 0 14px; border: 1px solid #e5e7eb; border-radius: 8px;
+  font-size: 15px; color: #111827; background: #f9fafb; font-family: inherit;
+  outline: none; box-sizing: border-box; transition: border-color 0.15s;
+}
+.isub-modal-input--active { border-color: #1ba8d5; background: #fff; font-size: 18px; font-weight: 600; }
+.isub-modal-input:focus { border-color: #1ba8d5; background: #fff; }
+
+/* Cost summary */
+.isub-cost-summary {
+  background: #f9fafb; border-radius: 10px; border: 1px solid #e8eaf0;
+  padding: 14px 16px; margin-bottom: 20px;
+}
+.isub-cost-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 0;
+}
+.isub-cost-label { font-size: 13px; color: #6b7280; }
+.isub-cost-value { font-size: 13px; font-weight: 600; color: #374151; }
+.isub-cost-divider { height: 1px; background: #e5e7eb; margin: 8px 0; }
+.isub-cost-row--total .isub-cost-label { font-size: 14px; font-weight: 700; color: #111827; }
+.isub-cost-value--total { font-size: 16px; font-weight: 800; color: #111827; }
+
+.isub-modal-actions {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 12px;
+}
+.isub-btn-cancel {
+  padding: 12px 0; border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;
+  font-size: 14px; font-weight: 500; color: #374151; cursor: pointer;
+  font-family: inherit; text-align: center; transition: border-color 0.15s;
+}
+.isub-btn-cancel:hover { border-color: #9ca3af; }
+.isub-btn-pay {
+  padding: 12px 0; border: none; border-radius: 8px; background: #1ba8d5;
+  font-size: 14px; font-weight: 600; color: #fff; cursor: pointer;
+  font-family: inherit; text-align: center; transition: background 0.15s;
+}
+.isub-btn-pay:hover { background: #0e96c2; }
+
+/* ══════════════════════════════════════════
+   EXPLORE PLANS PAGE
+══════════════════════════════════════════ */
+.isub-billing-toggle-wrap {
+  display: flex; flex-direction: column; align-items: center; gap: 8px; margin-bottom: 4px;
+}
+.isub-billing-toggle {
+  display: flex; background: #f3f4f6; border-radius: 10px; padding: 4px; gap: 4px;
+}
+.isub-billing-btn {
+  padding: 8px 24px; border-radius: 8px; border: none; font-size: 14px; font-weight: 600;
+  cursor: pointer; font-family: inherit; color: #6b7280; background: transparent;
+  transition: background 0.15s, color 0.15s;
+}
+.isub-billing-btn.active { background: #1ba8d5; color: #fff; }
+.isub-billing-save { font-size: 13px; color: #22c55e; font-weight: 600; margin: 0; }
+
+/* Plans grid — 3 columns */
+.isub-plans-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+}
+.isub-plan-option {
+  background: #fff; border-radius: 12px; border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05); padding: 22px 20px 18px;
+  display: flex; flex-direction: column; gap: 0;
+  transition: box-shadow 0.15s;
+}
+.isub-plan-option:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+.isub-plan-option--current { border-color: #e8eaf0; border-width: 1px; }
+
+.isub-plan-option-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;
+}
+.isub-plan-option-name { font-size: 16px; font-weight: 700; color: #111827; margin: 0; }
+.isub-plan-option-tag {
+  font-size: 11px; font-weight: 600; padding: 3px 8px; border-radius: 20px;
+}
+.isub-plan-option-amount { font-size: 28px; font-weight: 800; color: #111827; }
+.isub-plan-option-period { font-size: 13px; color: #6b7280; margin-bottom: 14px; }
+.isub-plan-option-seats-row {
+  display: flex; flex-direction: column; gap: 2px;
+  padding: 10px 0; border-top: 1px solid #f0f2f5; border-bottom: 1px solid #f0f2f5;
+  margin-bottom: 14px;
+}
+.isub-plan-option-seats-label { font-size: 11px; color: #9ca3af; font-weight: 500; }
+.isub-plan-option-seats-value { font-size: 15px; font-weight: 700; color: #111827; }
+.isub-plan-option-features-title { font-size: 13px; font-weight: 700; color: #374151; margin-bottom: 10px; }
+.isub-plan-option-features {
+  list-style: none; padding: 0; margin: 0 0 20px; display: flex; flex-direction: column; gap: 8px; flex: 1;
+}
+.isub-plan-option-feature {
+  display: flex; align-items: flex-start; gap: 8px; font-size: 13px; color: #374151;
+}
+.isub-plan-select-btn {
+  width: 100%; padding: 11px 0; border: 1px solid #e5e7eb; border-radius: 8px;
+  background: #fff; font-size: 14px; font-weight: 600; color: #374151;
+  cursor: pointer; font-family: inherit; transition: border-color 0.15s, background 0.15s, color 0.15s;
+  margin-top: auto;
+}
+.isub-plan-select-btn:hover { border-color: #1ba8d5; background: #f0f9ff; color: #1ba8d5; }
+
+/* ── Responsive ── */
+@media (max-width: 1000px) {
+  .isub-plans-grid { grid-template-columns: 1fr 1fr; }
+  .isub-plan-meta { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .isub-plans-grid { grid-template-columns: 1fr; }
+  .isub-body { padding: 14px; }
+}

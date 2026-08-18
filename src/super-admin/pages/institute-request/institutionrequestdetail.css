@@ -1,0 +1,82 @@
+/* ── Institution Request Detail ── prefix: ird- */
+
+.ird-page { min-height: 100%; background: #f4f6f9; }
+
+/* ── Page header ── */
+.ird-page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; background: #fff; border-bottom: 1px solid #e8eaf0;
+  flex-wrap: wrap; gap: 8px;
+}
+.ird-header-left { display: flex; align-items: center; gap: 12px; }
+.ird-back-btn {
+  background: none; border: none; cursor: pointer; color: #374151;
+  display: flex; align-items: center; padding: 5px; border-radius: 7px;
+  transition: background 0.15s;
+}
+.ird-back-btn:hover { background: #f3f4f6; }
+.ird-page-title { font-size: 20px; font-weight: 700; color: #111827; margin: 0; }
+.ird-breadcrumb { font-size: 12px; color: #9ca3af; white-space: nowrap; }
+
+/* ── Body ── */
+.ird-body { padding: 20px 24px; }
+
+/* ── Card ── */
+.ird-card {
+  background: #fff; border-radius: 14px; border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05); padding: 24px 28px 28px;
+}
+
+.ird-section-title {
+  font-size: 16px; font-weight: 700; color: #111827; margin: 0 0 22px;
+}
+
+/* ── Info grid — 3 cols ── */
+.ird-info-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 20px 28px;
+}
+
+.ird-info-item {
+  display: flex; flex-direction: column; gap: 5px;
+}
+.ird-info-item--full { grid-column: 1 / -1; }
+
+.ird-info-label {
+  font-size: 12px; color: #9ca3af; font-weight: 400;
+}
+.ird-info-value {
+  font-size: 14px; font-weight: 600; color: #111827;
+}
+
+/* ── Footer actions ── */
+.ird-footer-actions {
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 12px; margin-top: 32px;
+}
+
+.ird-btn-reject {
+  padding: 10px 22px; background: #dc2626; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 600; color: #fff; cursor: pointer;
+  font-family: inherit; transition: background 0.15s;
+}
+.ird-btn-reject:hover { background: #b91c1c; }
+
+.ird-btn-setup {
+  padding: 10px 22px; background: #1ba8d5; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 600; color: #fff; cursor: pointer;
+  font-family: inherit; transition: background 0.15s;
+}
+.ird-btn-setup:hover { background: #1596be; }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .ird-body { padding: 16px; }
+  .ird-card { padding: 18px 16px; }
+  .ird-info-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 540px) {
+  .ird-info-grid { grid-template-columns: 1fr; }
+  .ird-page-header { flex-direction: column; align-items: flex-start; }
+  .ird-footer-actions { flex-wrap: wrap; }
+}

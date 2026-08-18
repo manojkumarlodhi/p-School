@@ -1,0 +1,28 @@
+/* ═══════════════════════════════════════════════
+   Landing Page — Global Utilities
+   All section styles live in sections/*.css
+═══════════════════════════════════════════════ */
+
+.lp {
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  color: #1a1a2e;
+  background: #fff;
+  overflow-x: hidden;
+}
+
+/* Shared container */
+.lp-container {
+  max-width: 90rem;       /* 1440px */
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 4.375rem;    /* 0 70px */
+  box-sizing: border-box;
+}
+
+@media (max-width: 56.25rem) {
+  .lp-container { padding: 0 1.5rem; }
+}
+
+@media (max-width: 30rem) {
+  .lp-container { padding: 0 1rem; }
+}

@@ -1,0 +1,259 @@
+/* ═══════════════════════════════════════════════
+   Header Section  —  lph
+   Base: 16px  |  All values in rem
+═══════════════════════════════════════════════ */
+
+/* ── Outer ── */
+.lph {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  width: 100%;
+  height: 5.5rem;                      /* 88px — logo ke liye extra space */
+  background: #ffffff;
+  border-bottom: 0.0625rem solid #e2e8f0;
+  box-sizing: border-box;
+  transition: box-shadow 0.3s ease;
+}
+
+.lph--scrolled {
+  box-shadow: 0 0.125rem 1rem rgba(0, 0, 0, 0.08);
+}
+
+/* ── Inner ── */
+.lph__inner {
+  max-width: 90rem;                    /* 1440px */
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 4.375rem;                 /* 0 70px */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  gap: 2rem;
+}
+
+/* ══════════════════════════════════════════════
+   LOGO  —  image logo
+══════════════════════════════════════════════ */
+.lph__logo {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.lph__logo img {
+  width: 12.5rem;                      /* 200px */
+  height: 3.5rem;                      /* 56px  */
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+/* ══════════════════════════════════════════════
+   NAV
+══════════════════════════════════════════════ */
+.lph__nav {
+  display: flex;
+  align-items: center;
+  gap: 0.125rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.lph__nav-btn {
+  background: none;
+  border: 0.0625rem solid transparent;
+  cursor: pointer;
+  font-size: 0.9375rem;                /* 15px */
+  font-weight: 400;
+  color: #374151;
+  padding: 0.375rem 0.875rem;
+  border-radius: 1.25rem;
+  transition: color 0.2s, border-color 0.2s;
+  white-space: nowrap;
+  font-family: inherit;
+  line-height: 1.5;
+}
+
+.lph__nav-btn:hover {
+  color: #09A2DB;
+}
+
+/* Active — pill with border, no fill (exact as image) */
+.lph__nav-btn--active {
+  color: #09A2DB;
+  border-color: #09A2DB;
+  font-weight: 500;
+  background: transparent;
+}
+
+/* ══════════════════════════════════════════════
+   ACTIONS
+══════════════════════════════════════════════ */
+.lph__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+
+/* ── Base Button ── */
+.lph__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;                     /* 16px */
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  font-family: inherit;
+  line-height: 1.4;
+  border: 0.0625rem solid transparent;
+}
+
+/* Request Institution Enquiry — ghost outlined */
+.lph__btn--ghost {
+  background: #ffffff;
+  color: #374151;
+  border-color: #d1d5db;
+}
+
+.lph__btn--ghost:hover {
+  border-color: #09A2DB;
+  color: #09A2DB;
+  background: #f0f9ff;
+}
+
+/* Login — subtle outlined */
+.lph__btn--login {
+  background: #ffffff;
+  color: #09A2DB;
+  border-color: #09A2DB;
+}
+
+.lph__btn--login:hover {
+  background: #f0f9ff;
+}
+
+/* Download App — solid blue */
+.lph__btn--primary {
+  background: #09A2DB;
+  color: #ffffff;
+  border-color: #09A2DB;
+  box-shadow: 0 0.125rem 0.5rem rgba(9, 162, 219, 0.3);
+}
+
+.lph__btn--primary:hover {
+  background: #0077B6;
+  border-color: #0077B6;
+  box-shadow: 0 0.25rem 0.875rem rgba(9, 162, 219, 0.4);
+  transform: translateY(-0.0625rem);
+}
+
+/* ══════════════════════════════════════════════
+   HAMBURGER
+══════════════════════════════════════════════ */
+.lph__hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.3125rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.375rem;
+  flex-shrink: 0;
+}
+
+.lph__hamburger span {
+  display: block;
+  width: 1.5rem;
+  height: 0.125rem;
+  background: #374151;
+  border-radius: 0.125rem;
+  transition: all 0.3s ease;
+}
+
+.lph__hamburger--open span:nth-child(1) { transform: translateY(0.4375rem) rotate(45deg); }
+.lph__hamburger--open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.lph__hamburger--open span:nth-child(3) { transform: translateY(-0.4375rem) rotate(-45deg); }
+
+/* ══════════════════════════════════════════════
+   MOBILE DRAWER
+══════════════════════════════════════════════ */
+.lph__drawer {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem 1.5rem;
+  background: #fff;
+  border-top: 0.0625rem solid #e2e8f0;
+  gap: 0.25rem;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.07);
+}
+
+.lph__drawer-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: #374151;
+  padding: 0.75rem 0.875rem;
+  border-radius: 0.5rem;
+  text-align: left;
+  transition: background 0.18s, color 0.18s;
+  font-family: inherit;
+}
+
+.lph__drawer-btn:hover,
+.lph__drawer-btn--active {
+  background: #f0f9ff;
+  color: #09A2DB;
+}
+
+.lph__drawer-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 0.0625rem solid #e2e8f0;
+}
+
+.lph__drawer-actions .lph__btn {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ══════════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════════ */
+@media (max-width: 56.25rem) {         /* 900px */
+  .lph__nav,
+  .lph__actions { display: none; }
+  .lph__hamburger { display: flex; }
+  .lph__inner { padding: 0 1.5rem; gap: 1rem; }
+}
+
+@media (max-width: 30rem) {            /* 480px */
+  .lph__inner { padding: 0 1rem; }
+}

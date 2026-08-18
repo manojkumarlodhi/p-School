@@ -1,0 +1,273 @@
+.cm-page {
+  min-height: 100%;
+  background: #f4f6f9;
+}
+
+/* ── Page header ── */
+.cm-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px 14px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.cm-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.cm-breadcrumb {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ── Body ── */
+.cm-body {
+  padding: 20px 24px;
+}
+
+/* ── Toolbar ── */
+.cm-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.cm-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.cm-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Search */
+.cm-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 7px 14px;
+  background: #fff;
+  color: #9ca3af;
+  min-width: 240px;
+}
+
+.cm-search-input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #374151;
+  background: transparent;
+  width: 100%;
+  font-family: inherit;
+}
+.cm-search-input::placeholder { color: #9ca3af; }
+
+/* Filter btn */
+.cm-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s;
+}
+.cm-filter-btn:hover { border-color: #1ba8d5; color: #1ba8d5; }
+
+/* Add btn */
+.cm-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #e0f7ff;
+  border: 1.5px solid #1ba8d5;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1ba8d5;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s;
+}
+.cm-add-btn:hover { background: #b3ecff; }
+
+/* System note */
+.cm-system-note {
+  font-size: 12px;
+  color: #9ca3af;
+  margin-bottom: 20px;
+}
+
+/* ── Cards grid ── */
+.cm-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+/* ── Category card ── */
+.cm-card {
+  background: #fff;
+  border-radius: 14px;
+  border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  padding: 22px 24px 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  min-height: 220px;
+}
+
+/* Top row: icon left, status right */
+.cm-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.cm-card-status {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.cm-status-label {
+  font-size: 11px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+/* Toggle */
+.cm-toggle {
+  position: relative;
+  display: inline-block;
+  width: 46px;
+  height: 26px;
+}
+.cm-toggle input { opacity: 0; width: 0; height: 0; }
+
+.cm-toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 26px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.cm-toggle input:checked + .cm-toggle-slider { background: #1ba8d5; }
+
+.cm-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+.cm-toggle input:checked + .cm-toggle-slider::before {
+  transform: translateX(20px);
+}
+
+/* Card title */
+.cm-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 14px;
+  letter-spacing: -0.3px;
+}
+
+/* Stats row */
+.cm-card-stats {
+  display: flex;
+  gap: 36px;
+  margin-bottom: 0;
+}
+
+.cm-card-stat-label {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 5px;
+  font-weight: 400;
+}
+
+.cm-card-stat-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ── View Details footer ── */
+/* Gradient area: white → light blue, top to bottom */
+.cm-card-footer {
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  margin-top: 20px;
+  padding: 18px 18px 18px 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #b3ecff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* White pill button on top of the gradient */
+.cm-view-btn {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 10px 22px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1ba8d5;
+  cursor: pointer;
+  font-family: inherit;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+  transition: box-shadow 0.15s, background 0.15s;
+  white-space: nowrap;
+}
+.cm-view-btn:hover {
+  background: #f0f9ff;
+  box-shadow: 0 2px 8px rgba(27,168,213,0.15);
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .cm-cards-grid { grid-template-columns: 1fr; }
+  .cm-body { padding: 16px; }
+  .cm-page-header { padding: 14px 16px; }
+}
+
+@media (max-width: 600px) {
+  .cm-toolbar { flex-direction: column; align-items: flex-start; }
+  .cm-toolbar-actions { width: 100%; flex-wrap: wrap; }
+  .cm-search { min-width: unset; flex: 1; }
+}

@@ -1,0 +1,154 @@
+/* ── Subscription Plan Page ── prefix: sp- */
+
+.sp-page { min-height: 100%; background: #f4f6f9; }
+
+/* ── Page header ── */
+.sp-page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px 14px; background: #fff;
+  border-bottom: 1px solid #e8eaf0; flex-wrap: wrap; gap: 8px;
+}
+.sp-page-title { font-size: 22px; font-weight: 700; color: #111827; margin: 0; }
+.sp-breadcrumb { font-size: 12px; color: #9ca3af; white-space: nowrap; }
+
+/* ── Tabs ── */
+.sp-tabs {
+  display: flex; background: #fff;
+  border-bottom: 1px solid #e8eaf0; padding: 0 24px;
+}
+.sp-tab {
+  padding: 12px 20px; font-size: 13.5px; font-weight: 500; color: #6b7280;
+  background: none; border: none; border-bottom: 2.5px solid transparent;
+  cursor: pointer; font-family: inherit; transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
+}
+.sp-tab:hover { color: #1ba8d5; }
+.sp-tab.active { color: #1ba8d5; border-bottom-color: #1ba8d5; font-weight: 700; }
+
+/* ── Body ── */
+.sp-body { padding: 20px 24px; }
+
+/* ── Table card ── */
+.sp-table-card {
+  background: #fff; border-radius: 12px;
+  border: 1px solid #e8eaf0; box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden;
+}
+
+/* ── Toolbar ── */
+.sp-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; border-bottom: 1px solid #f0f2f5;
+  flex-wrap: wrap; gap: 12px;
+}
+.sp-section-title { font-size: 15px; font-weight: 700; color: #111827; margin: 0; }
+.sp-toolbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* Search */
+.sp-search {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid #e5e7eb; border-radius: 8px;
+  padding: 7px 14px; background: #fff; color: #9ca3af; min-width: 200px;
+}
+.sp-search-input {
+  border: none; outline: none; font-size: 13px; color: #374151;
+  background: transparent; width: 100%; font-family: inherit;
+}
+.sp-search-input::placeholder { color: #9ca3af; }
+
+/* Filter btn */
+.sp-filter-btn {
+  display: flex; align-items: center; gap: 6px; padding: 7px 14px;
+  border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;
+  font-size: 13px; color: #374151; cursor: pointer; font-family: inherit;
+  transition: border-color 0.15s, color 0.15s;
+}
+.sp-filter-btn:hover { border-color: #1ba8d5; color: #1ba8d5; }
+
+/* Create btn */
+.sp-create-btn {
+  display: flex; align-items: center; gap: 6px; padding: 7px 16px;
+  background: #e0f7ff; border: 1.5px solid #1ba8d5; border-radius: 8px;
+  font-size: 13px; font-weight: 600; color: #1ba8d5; cursor: pointer;
+  font-family: inherit; white-space: nowrap; transition: background 0.15s;
+}
+.sp-create-btn:hover { background: #b3ecff; }
+
+/* ── Table ── */
+.sp-table-wrap { overflow-x: auto; }
+.sp-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.sp-table thead tr { background: #f9fafb; border-bottom: 1px solid #e8eaf0; }
+.sp-table th {
+  padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 600;
+  color: #374151; white-space: nowrap;
+}
+.sp-table tbody tr { border-bottom: 1px solid #f3f4f6; transition: background 0.12s; }
+.sp-table tbody tr:last-child { border-bottom: none; }
+.sp-table tbody tr:hover { background: #f9fafb; }
+.sp-table td { padding: 13px 16px; color: #374151; white-space: nowrap; vertical-align: middle; }
+.sp-td-name { font-weight: 600; color: #111827; }
+
+/* ── Toggle ── */
+.sp-toggle {
+  width: 42px; height: 24px; border-radius: 12px; border: none;
+  background: #d1d5db; cursor: pointer; position: relative;
+  transition: background 0.2s; padding: 0; flex-shrink: 0;
+}
+.sp-toggle--on { background: #1ba8d5; }
+.sp-toggle-thumb {
+  position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%; background: #fff;
+  transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.sp-toggle--on .sp-toggle-thumb { transform: translateX(18px); }
+
+/* ── Action buttons ── */
+.sp-action-btns { display: flex; align-items: center; gap: 6px; }
+.sp-action-btn {
+  width: 30px; height: 30px; border-radius: 7px; border: 1px solid #e5e7eb;
+  background: #fff; cursor: pointer; display: flex; align-items: center;
+  justify-content: center; transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.sp-action-btn--view  { color: #6b7280; }
+.sp-action-btn--view:hover  { background: #f0f9ff; border-color: #1ba8d5; color: #1ba8d5; }
+.sp-action-btn--edit  { color: #6b7280; }
+.sp-action-btn--edit:hover  { background: #f0f9ff; border-color: #1ba8d5; color: #1ba8d5; }
+.sp-action-btn--delete { color: #ef4444; border-color: #fecaca; background: #fff5f5; }
+.sp-action-btn--delete:hover { background: #fee2e2; border-color: #ef4444; }
+
+/* ── Empty ── */
+.sp-empty { text-align: center; color: #9ca3af; padding: 32px 16px; }
+
+/* ── Pagination ── */
+.sp-pagination {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; border-top: 1px solid #f3f4f6; flex-wrap: wrap; gap: 10px;
+}
+.sp-page-prev, .sp-page-next {
+  display: flex; align-items: center; gap: 6px; padding: 7px 16px;
+  border: 1.5px solid #1ba8d5; border-radius: 8px; background: #fff;
+  font-size: 13px; font-weight: 600; color: #1ba8d5; cursor: pointer;
+  font-family: inherit; transition: background 0.15s;
+}
+.sp-page-prev:hover, .sp-page-next:hover { background: #e0f7ff; }
+.sp-page-prev:disabled, .sp-page-next:disabled { opacity: 0.45; cursor: default; }
+.sp-page-numbers { display: flex; align-items: center; gap: 4px; }
+.sp-page-num {
+  min-width: 32px; height: 32px; display: inline-flex; align-items: center;
+  justify-content: center; border-radius: 6px; border: none; background: transparent;
+  font-size: 13px; font-weight: 500; color: #374151; cursor: pointer;
+  font-family: inherit; transition: background 0.12s, color 0.12s; padding: 0 4px;
+}
+.sp-page-num:hover { background: #f3f4f6; }
+.sp-page-num.active { background: #1ba8d5; color: #fff; font-weight: 700; }
+.sp-page-ellipsis { font-size: 13px; color: #9ca3af; padding: 0 4px; user-select: none; }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .sp-body { padding: 16px; }
+  .sp-toolbar { flex-direction: column; align-items: flex-start; }
+  .sp-toolbar-actions { width: 100%; flex-wrap: wrap; }
+  .sp-search { min-width: unset; flex: 1; }
+}
+@media (max-width: 600px) {
+  .sp-pagination { flex-direction: column; align-items: center; }
+}

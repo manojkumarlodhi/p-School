@@ -1,0 +1,601 @@
+/* ── Individual Instructor Wallet (Web Layout) ── prefix: iwallet- */
+
+.iwallet-page {
+  padding: 28px 32px;
+  min-height: 100%;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #f8fafc;
+}
+
+/* ── Page header ── */
+.iwallet-page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.iwallet-page-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 4px;
+}
+.iwallet-breadcrumb { font-size: 12.5px; color: #9ca3af; }
+
+.iwallet-add-method-btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: 1.5px solid #1ba8d5;
+  background: #f0f9ff;
+  color: #1ba8d5;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+.iwallet-add-method-btn:hover { background: #e0f5fb; }
+
+/* ── Top grid: balance + stats ── */
+.iwallet-top-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+/* Balance card */
+.iwallet-balance-card {
+  background: linear-gradient(135deg, #1ba8d5 0%, #0d7fa8 100%);
+  border-radius: 20px;
+  padding: 28px 28px 22px;
+  color: #fff;
+  box-shadow: 0 6px 28px rgba(27, 168, 213, 0.28);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 200px;
+}
+.iwallet-balance-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.iwallet-balance-label {
+  font-size: 13px;
+  opacity: 0.8;
+  margin-bottom: 8px;
+}
+.iwallet-balance-amount {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: -1px;
+  margin-bottom: 4px;
+}
+.iwallet-balance-sub {
+  font-size: 12px;
+  opacity: 0.7;
+}
+.iwallet-balance-icon-wrap {
+  width: 48px; height: 48px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.2);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.iwallet-balance-actions {
+  display: flex;
+  gap: 10px;
+}
+.iwallet-btn-outline {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 11px 0;
+  border-radius: 10px;
+  border: 1.5px solid rgba(255,255,255,0.6);
+  background: transparent;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.iwallet-btn-outline:hover { background: rgba(255,255,255,0.15); }
+.iwallet-btn-white {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center; gap: 7px;
+  padding: 11px 0;
+  border-radius: 10px;
+  border: none;
+  background: #fff;
+  color: #1ba8d5;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.iwallet-btn-white:hover { background: #e0f5fb; }
+
+/* Stats column */
+.iwallet-stats-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.iwallet-stat-card {
+  flex: 1;
+  border-radius: 14px;
+  padding: 16px 20px;
+  border: 1px solid #f0f2f5;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+  background: #fff;
+}
+.iwallet-stat-card.green { border-left: 4px solid #22c55e; }
+.iwallet-stat-card.blue  { border-left: 4px solid #1ba8d5; }
+.iwallet-stat-card.purple{ border-left: 4px solid #8b5cf6; }
+.iwallet-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.iwallet-stat-label { font-size: 12px; color: #6b7280; font-weight: 500; }
+.iwallet-stat-value { font-size: 24px; font-weight: 800; color: #111827; margin-bottom: 2px; }
+.iwallet-stat-sub   { font-size: 11.5px; color: #9ca3af; }
+
+/* ── Transactions section ── */
+.iwallet-txn-section {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #f0f2f5;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  overflow: hidden;
+}
+.iwallet-txn-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f3f4f6;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.iwallet-txn-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+.iwallet-filters {
+  display: flex;
+  gap: 6px;
+}
+.iwallet-filter-btn {
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.iwallet-filter-btn:hover { border-color: #1ba8d5; color: #1ba8d5; }
+.iwallet-filter-btn.active {
+  background: #1ba8d5;
+  border-color: #1ba8d5;
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Table head */
+.iwallet-table-head {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  padding: 10px 24px;
+  background: #f8fafc;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Transaction rows */
+.iwallet-txn-list { display: flex; flex-direction: column; }
+.iwallet-txn-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1fr 1fr;
+  align-items: center;
+  padding: 14px 24px;
+  border-bottom: 1px solid #f9fafb;
+  transition: background 0.12s;
+}
+.iwallet-txn-row:last-child { border-bottom: none; }
+.iwallet-txn-row:hover { background: #f8fafc; }
+
+.iwallet-txn-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.iwallet-txn-icon {
+  width: 38px; height: 38px;
+  border-radius: 10px;
+  background: #f0f9ff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  color: #1ba8d5;
+}
+.iwallet-txn-label { font-size: 13.5px; font-weight: 600; color: #111827; }
+.iwallet-txn-date  { font-size: 13px; color: #6b7280; }
+
+.iwallet-txn-amount { font-size: 14px; font-weight: 700; }
+.iwallet-txn-amount.payout  { color: #22c55e; }
+.iwallet-txn-amount.failed  { color: #ef4444; }
+.iwallet-txn-amount.pending { color: #f59e0b; }
+
+.iwallet-txn-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;
+}
+.iwallet-txn-badge.payout  { background: #dcfce7; color: #16a34a; }
+.iwallet-txn-badge.failed  { background: #fee2e2; color: #dc2626; }
+.iwallet-txn-badge.pending { background: #fef9c3; color: #ca8a04; }
+
+.iwallet-empty {
+  padding: 40px;
+  text-align: center;
+  color: #9ca3af;
+  font-size: 14px;
+}
+
+/* ── Sub-pages: Withdraw, Bank Details, Add Method ── */
+.iwallet-subpage {
+  padding: 28px 32px;
+  min-height: 100%;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #f8fafc;
+}
+.iwallet-subpage-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+.iwallet-back-btn {
+  width: 36px; height: 36px;
+  border-radius: 9px; border: 1px solid #e5e7eb;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #374151; flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s;
+}
+.iwallet-back-btn:hover { background: #f0f9ff; border-color: #1ba8d5; color: #1ba8d5; }
+.iwallet-subpage-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+}
+
+.iwallet-subpage-grid {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* Form card */
+.iwallet-form-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #f0f2f5;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.05);
+}
+.iwallet-form-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 20px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid #f3f4f6;
+}
+.iwallet-form-group { margin-bottom: 16px; }
+.iwallet-form-group:last-child { margin-bottom: 0; }
+.iwallet-form-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 6px;
+}
+.iwallet-form-input {
+  width: 100%;
+  padding: 11px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  font-size: 14px;
+  color: #111827;
+  font-family: inherit;
+  outline: none;
+  box-sizing: border-box;
+  transition: border-color 0.15s;
+}
+.iwallet-form-input:focus { border-color: #1ba8d5; box-shadow: 0 0 0 3px rgba(27,168,213,0.08); }
+.iwallet-form-input::placeholder { color: #9ca3af; }
+
+.iwallet-select-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.iwallet-select-bank-icon {
+  position: absolute;
+  left: 12px;
+  pointer-events: none;
+  z-index: 1;
+}
+.iwallet-form-select {
+  width: 100%;
+  padding: 11px 14px 11px 38px;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  font-size: 14px;
+  color: #111827;
+  font-family: inherit;
+  outline: none;
+  appearance: none;
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E") no-repeat right 14px center;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.iwallet-form-select:focus { border-color: #1ba8d5; }
+
+.iwallet-btn-full {
+  width: 100%;
+  padding: 13px 0;
+  border-radius: 10px;
+  background: #1ba8d5;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  margin-top: 20px;
+}
+.iwallet-btn-full:hover { background: #0e8ab5; }
+
+/* Account radio list */
+.iwallet-account-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid #f3f4f6;
+  cursor: pointer;
+}
+.iwallet-account-option:last-of-type { border-bottom: none; }
+.iwallet-account-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #111827;
+  font-weight: 500;
+}
+.iwallet-radio {
+  width: 18px; height: 18px;
+  accent-color: #1ba8d5;
+  cursor: pointer;
+}
+.iwallet-add-bank-btn {
+  width: 100%;
+  margin-top: 14px;
+  padding: 12px 0;
+  border-radius: 10px;
+  border: 1.5px dashed #1ba8d5;
+  background: #f0f9ff;
+  color: #1ba8d5;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.iwallet-add-bank-btn:hover { background: #e0f5fb; }
+
+/* Method option rows */
+.iwallet-method-option {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  border-radius: 10px;
+  border: 1.5px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+  color: #111827;
+  transition: border-color 0.15s, background 0.15s;
+  margin-bottom: 10px;
+}
+.iwallet-method-option:hover { border-color: #1ba8d5; background: #f0f9ff; }
+.iwallet-method-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.iwallet-method-badge {
+  background: #1ba8d5;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 7px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+}
+
+/* Info panel (right side of subpage) */
+.iwallet-info-panel {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  border: 1px solid #f0f2f5;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+}
+.iwallet-info-panel-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px;
+}
+.iwallet-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+.iwallet-info-item:last-child { border-bottom: none; }
+.iwallet-info-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: #1ba8d5;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ── Success Modal ── */
+.iwallet-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  padding: 20px;
+}
+.iwallet-modal {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px 32px 32px;
+  max-width: 360px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}
+.iwallet-modal-check {
+  width: 68px; height: 68px;
+  border-radius: 50%;
+  background: #22c55e;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 20px rgba(34,197,94,0.3);
+}
+.iwallet-modal-title {
+  font-size: 18px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0 0 8px;
+}
+.iwallet-modal-msg {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0 0 24px;
+  line-height: 1.5;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .iwallet-top-grid { grid-template-columns: 1fr; }
+  .iwallet-stats-col { flex-direction: row; }
+  .iwallet-subpage-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .iwallet-page, .iwallet-subpage { padding: 16px; }
+  .iwallet-stats-col { flex-direction: column; }
+  .iwallet-table-head { display: none; }
+  .iwallet-txn-row {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px;
+  }
+  .iwallet-balance-amount { font-size: 32px; }
+}
+
+/* ── Wallet Notification page additions ── */
+.iwallet-notif-content-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #f0f2f5;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  padding: 20px 24px;
+  max-width: 760px;
+}
+
+.iwallet-notif-header-actions {
+  display: flex; align-items: center; gap: 10px; margin-left: auto;
+}
+.iwallet-notif-action-btn {
+  padding: 7px 16px; border: 1.5px solid #e5e7eb; border-radius: 8px;
+  background: #fff; font-size: 13px; font-weight: 600; color: #374151;
+  cursor: pointer; font-family: inherit; transition: all 0.15s;
+}
+.iwallet-notif-action-btn:hover { border-color: #1ba8d5; color: #1ba8d5; background: #f0f9ff; }
+.iwallet-notif-delete-btn {
+  width: 36px; height: 36px; border-radius: 9px;
+  border: 1.5px solid #fee2e2; background: #fef2f2; color: #ef4444;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.15s;
+}
+.iwallet-notif-delete-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.iwallet-notif-delete-btn:not(:disabled):hover { background: #fee2e2; }
+
+.iwallet-notif-section-label {
+  font-size: 12px; font-weight: 700; color: #9ca3af;
+  text-transform: uppercase; letter-spacing: 0.6px;
+  margin: 16px 0 8px; padding-bottom: 8px; border-bottom: 1px solid #f3f4f6;
+}
+.iwallet-notif-section-label:first-child { margin-top: 0; }
+
+.iwallet-notif-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 8px; border-radius: 10px; cursor: pointer;
+  transition: background 0.12s; border: 1.5px solid transparent; margin-bottom: 2px;
+}
+.iwallet-notif-item:hover { background: #f8fafc; }
+.iwallet-notif-item.selected { background: #f0f9ff; border-color: #bae6fd; }
+.iwallet-notif-check {
+  margin-top: 3px; width: 16px; height: 16px;
+  accent-color: #1ba8d5; flex-shrink: 0; cursor: pointer;
+}
+.iwallet-notif-icon {
+  width: 38px; height: 38px; border-radius: 10px; background: #f0f9ff;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.iwallet-notif-body { flex: 1; min-width: 0; }
+.iwallet-notif-text { font-size: 13.5px; color: #374151; margin-bottom: 4px; line-height: 1.5; }
+.iwallet-notif-link { color: #1ba8d5; font-weight: 500; }
+.iwallet-notif-from { font-size: 12.5px; color: #1ba8d5; font-weight: 600; }
+.iwallet-notif-time { font-size: 12px; color: #9ca3af; white-space: nowrap; flex-shrink: 0; padding-top: 2px; }

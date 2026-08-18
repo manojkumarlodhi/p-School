@@ -1,0 +1,221 @@
+/* ── Instructor Virtual Lab   prefix: invl- */
+
+.invl-page {
+  min-height: 100%;
+  background: #f4f6f9;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+.invl-page-header {
+  padding: 14px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.invl-page-title { font-size: 20px; font-weight: 700; color: #111827; margin: 0; }
+.invl-breadcrumb { font-size: 12px; color: #9ca3af; }
+
+.invl-body { padding: 20px 24px 32px; display: flex; flex-direction: column; gap: 20px; }
+
+/* Stats */
+.invl-stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.invl-stat-card {
+  background: #fff; border-radius: 12px;
+  border: 1px solid #e8eaf0; box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  padding: 18px 20px 16px;
+}
+.invl-stat-top {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.invl-stat-tag  { font-size: 12px; font-weight: 600; }
+.invl-stat-label { font-size: 12px; color: #6b7280; font-weight: 500; margin-bottom: 4px; }
+.invl-stat-value { font-size: 22px; font-weight: 700; color: #111827; letter-spacing: -0.5px; }
+
+/* Table card */
+.invl-table-card {
+  background: #fff; border-radius: 12px;
+  border: 1px solid #e8eaf0; box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden;
+}
+.invl-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; border-bottom: 1px solid #f0f2f5; gap: 12px; flex-wrap: wrap;
+}
+.invl-table-title { font-size: 15px; font-weight: 700; color: #111827; margin: 0; }
+.invl-toolbar-right { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.invl-search-wrap {
+  display: flex; align-items: center; gap: 8px;
+  border: 1px solid #e5e7eb; border-radius: 8px; padding: 7px 12px;
+  background: #fff; transition: border-color 0.15s;
+}
+.invl-search-wrap:focus-within { border-color: #1ba8d5; }
+.invl-search {
+  border: none; outline: none; font-size: 13px; color: #374151;
+  font-family: inherit; width: 160px; background: transparent;
+}
+.invl-search::placeholder { color: #9ca3af; }
+
+.invl-btn {
+  display: flex; align-items: center; gap: 6px; padding: 8px 14px;
+  border-radius: 8px; font-size: 13px; font-weight: 500; cursor: pointer;
+  font-family: inherit; white-space: nowrap; transition: all 0.15s;
+}
+.invl-btn--text {
+  background: #fff; border: 1px solid #e5e7eb; color: #374151;
+}
+.invl-btn--text:hover { border-color: #1ba8d5; background: #f0f9ff; color: #1ba8d5; }
+
+.invl-table-wrap { overflow-x: auto; }
+.invl-table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.invl-table th {
+  padding: 12px 16px; text-align: left; font-size: 12.5px; font-weight: 600;
+  color: #374151; background: #f9fafb; border-bottom: 1px solid #f0f2f5; white-space: nowrap;
+}
+.invl-table td {
+  padding: 14px 16px; color: #374151; border-bottom: 1px solid #f9fafb; vertical-align: middle;
+}
+.invl-table tr:last-child td { border-bottom: none; }
+.invl-table tr:hover td { background: #fafbfc; }
+
+.invl-status {
+  display: inline-block; padding: 4px 12px; border-radius: 20px;
+  font-size: 12px; font-weight: 600;
+}
+.invl-status--active  { background: #dcfce7; color: #16a34a; }
+.invl-status--limited { background: #fef3c7; color: #d97706; }
+.invl-status--offline { background: #fee2e2; color: #ef4444; }
+
+.invl-launch-btn {
+  display: inline-flex; align-items: center; gap: 5px;
+  padding: 6px 12px; border: none; border-radius: 8px;
+  background: #1ba8d5; color: #fff; font-size: 12.5px; font-weight: 600;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.invl-launch-btn:hover { background: #1596be; }
+
+/* Pagination */
+.invl-pagination {
+  display: flex; align-items: center; justify-content: space-between; padding: 14px 20px;
+  border-top: 1px solid #f0f2f5;
+}
+.invl-page-btn--nav {
+  display: flex; align-items: center; gap: 6px; padding: 7px 14px;
+  border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;
+  font-size: 13px; font-weight: 500; color: #374151; cursor: pointer;
+  font-family: inherit; transition: all 0.15s;
+}
+.invl-page-btn--nav:hover:not(:disabled) { border-color: #1ba8d5; color: #1ba8d5; background: #f0f9ff; }
+.invl-page-btn--nav:disabled { opacity: 0.4; cursor: not-allowed; }
+.invl-page-numbers { display: flex; align-items: center; gap: 4px; }
+.invl-page-num {
+  width: 32px; height: 32px; border-radius: 6px; border: 1px solid #e5e7eb;
+  background: #fff; font-size: 13px; font-weight: 500; color: #374151;
+  cursor: pointer; font-family: inherit; transition: all 0.15s;
+}
+.invl-page-num:hover { border-color: #1ba8d5; color: #1ba8d5; }
+.invl-page-num.active { background: #1ba8d5; border-color: #1ba8d5; color: #fff; }
+
+/* Modal */
+.invl-modal-overlay {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.45); z-index: 1000;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.invl-modal {
+  background: #fff; border-radius: 14px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.18);
+  width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto;
+}
+.invl-modal-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px; border-bottom: 1px solid #f0f2f5;
+  position: sticky; top: 0; background: #fff; z-index: 1;
+}
+.invl-modal-title { font-size: 17px; font-weight: 700; color: #111827; margin: 0; }
+.invl-modal-close {
+  width: 32px; height: 32px; border-radius: 8px; border: 1px solid #e5e7eb;
+  background: #fff; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #6b7280; transition: background 0.15s;
+}
+.invl-modal-close:hover { background: #f3f4f6; }
+.invl-modal-body { padding: 20px 24px 24px; }
+
+.invl-policy-toggle-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; background: #f9fafb; border-radius: 10px;
+  border: 1px solid #e8eaf0; margin-bottom: 20px;
+}
+.invl-policy-toggle-label { font-size: 14px; font-weight: 600; color: #111827; margin-bottom: 3px; }
+.invl-policy-toggle-desc  { font-size: 12px; color: #6b7280; }
+
+.invl-policy-field { margin-bottom: 16px; }
+.invl-policy-label { font-size: 12.5px; font-weight: 500; color: #374151; display: block; margin-bottom: 6px; }
+.invl-policy-hint  { font-size: 11.5px; color: #9ca3af; margin: 4px 0 0; }
+.invl-policy-input {
+  width: 100%; height: 44px; padding: 0 14px;
+  border: 1px solid #e5e7eb; border-radius: 8px;
+  font-size: 13.5px; color: #111827; background: #f9fafb;
+  font-family: inherit; outline: none; box-sizing: border-box; transition: border-color 0.15s;
+}
+.invl-policy-input:focus { border-color: #1ba8d5; background: #fff; }
+.invl-policy-input::placeholder { color: #9ca3af; }
+
+.invl-select-wrap { position: relative; display: flex; align-items: center; }
+.invl-select {
+  width: 100%; height: 44px; padding: 0 36px 0 14px;
+  border: 1px solid #e5e7eb; border-radius: 8px;
+  font-size: 13.5px; color: #111827; background: #f9fafb;
+  font-family: inherit; outline: none; appearance: none; cursor: pointer; transition: border-color 0.15s;
+}
+.invl-select:focus { border-color: #1ba8d5; background: #fff; }
+.invl-select-wrap svg { position: absolute; right: 12px; pointer-events: none; }
+
+.invl-features-title { font-size: 14.5px; font-weight: 700; color: #111827; margin: 20px 0 12px; }
+.invl-features-list { display: flex; flex-direction: column; }
+.invl-feature-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 0; border-bottom: 1px solid #f0f2f5;
+}
+.invl-feature-row:last-child { border-bottom: none; }
+.invl-feature-label { font-size: 13.5px; color: #374151; font-weight: 500; }
+
+.invl-policy-notice {
+  display: flex; align-items: center; gap: 10px;
+  padding: 12px 14px; background: #fffbeb; border-radius: 8px;
+  border: 1px solid #fde68a; margin: 20px 0;
+  font-size: 13px; color: #92400e;
+}
+.invl-policy-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.invl-btn-reset {
+  padding: 12px 0; border: 1px solid #e5e7eb; border-radius: 8px;
+  background: #fff; font-size: 14px; font-weight: 500; color: #374151;
+  cursor: pointer; font-family: inherit; transition: border-color 0.15s; text-align: center;
+}
+.invl-btn-reset:hover { border-color: #9ca3af; }
+.invl-btn-save {
+  padding: 12px 0; border: none; border-radius: 8px;
+  background: #1ba8d5; font-size: 14px; font-weight: 600; color: #fff;
+  cursor: pointer; font-family: inherit; transition: background 0.15s; text-align: center;
+}
+.invl-btn-save:hover { background: #0e96c2; }
+
+/* Toggle */
+.invl-toggle {
+  width: 44px; height: 24px; border-radius: 12px; background: #d1d5db;
+  border: none; cursor: pointer; position: relative; transition: background 0.2s; padding: 0; flex-shrink: 0;
+}
+.invl-toggle--on { background: #1ba8d5; }
+.invl-toggle-thumb {
+  position: absolute; top: 3px; left: 3px; width: 18px; height: 18px;
+  border-radius: 50%; background: #fff; transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.invl-toggle--on .invl-toggle-thumb { transform: translateX(20px); }
+
+@media (max-width: 900px) { .invl-stats-row { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .invl-body { padding: 14px; } .invl-stats-row { grid-template-columns: 1fr; } }

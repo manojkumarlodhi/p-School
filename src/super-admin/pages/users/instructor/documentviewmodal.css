@@ -1,0 +1,115 @@
+/* ── Backdrop ── */
+.dvm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  backdrop-filter: blur(2px);
+}
+
+/* ── Modal ── */
+.dvm-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px 28px 28px;
+  position: relative;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.22);
+  scrollbar-width: none;
+}
+.dvm-modal::-webkit-scrollbar { display: none; }
+
+/* ── Header ── */
+.dvm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.dvm-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.dvm-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: #f3f4f6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  transition: background 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+.dvm-close:hover { background: #fee2e2; color: #ef4444; }
+
+/* ── Divider ── */
+.dvm-divider {
+  height: 1px;
+  background: #f0f2f5;
+  margin-bottom: 18px;
+}
+
+/* ── Doc name row ── */
+.dvm-doc-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.dvm-doc-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.dvm-download-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b7280;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  flex-shrink: 0;
+}
+.dvm-download-btn:hover {
+  background: #f0f9ff;
+  border-color: #1ba8d5;
+  color: #1ba8d5;
+}
+
+/* ── Preview area ── */
+.dvm-preview {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #eeede9;
+  line-height: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 680px) {
+  .dvm-modal { padding: 18px 16px 20px; }
+  .dvm-title { font-size: 16px; }
+  .dvm-doc-name { font-size: 15px; }
+}

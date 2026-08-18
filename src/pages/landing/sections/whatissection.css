@@ -1,0 +1,512 @@
+/* ===== WHAT IS SECTION ===== */
+.wis {
+  width: 100%;
+  background: linear-gradient(135deg, #1a8fe3 0%, #3ab5f5 50%, #1a8fe3 100%);
+  padding: 60px 0 80px 0;
+  overflow: hidden;
+}
+
+.wis__inner {
+  max-width: 90rem;           /* 1440px */
+  margin: 0 auto;
+  padding: 0 4.375rem;        /* 70px */
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* ── Heading ── */
+.wis__hd {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.wis__h2 {
+  font-family: 'Gilroy-Bold', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.1;
+  color: #ffffff;
+  margin: 0;
+}
+
+.wis__sub {
+  font-family: 'Gilroy-Medium', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 480px;
+  margin: 0;
+}
+
+/* ── Cards Row ── */
+/* Design spec: width 1300px, height 596px, gap 48px */
+.wis__cards--desktop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  align-items: stretch;
+}
+
+/* ── Base Card ── */
+.wis__card {
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+  height: 596px;
+}
+
+/* ─────────────────────────────────────────────
+   LEFT CARD
+   Image: overflows from top (top se bahar)
+   Text: pinned to bottom
+───────────────────────────────────────────── */
+.wis__card--left .wis__card-phone {
+  position: absolute;
+  top: -152px;                /* phone ka top/notch crop ho jaye */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.wis__card--left .wis__card-phone img {
+  width: 252px;
+  height: auto;
+  display: block;
+}
+
+.wis__card--left .wis__card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 32px 40px;
+  text-align: center;
+  z-index: 3;
+  background: #ffffff;
+}
+
+/* ─────────────────────────────────────────────
+   CENTER CARD
+   Text: at top
+   Image: overflows from bottom (neeche se bahar)
+───────────────────────────────────────────── */
+.wis__card--center .wis__card-body {
+  padding: 40px 32px 28px;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+}
+
+.wis__card--center .wis__card-phone {
+  position: absolute;
+  bottom: -158px;             /* image bottom se overflow */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.wis__card--center .wis__card-phone img {
+  width: 252px;
+  height: auto;
+  display: block;
+}
+
+/* ─────────────────────────────────────────────
+   RIGHT CARD — same as left
+   Image: overflows from top
+   Text: pinned to bottom
+───────────────────────────────────────────── */
+.wis__card--right .wis__card-phone {
+  position: absolute;
+  top: -152px;                /* phone ka top/notch crop ho jaye */
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.wis__card--right .wis__card-phone img {
+  width: 252px;
+  height: auto;
+  display: block;
+}
+
+.wis__card--right .wis__card-body {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 28px 32px 40px;
+  text-align: center;
+  z-index: 3;
+  background: #ffffff;
+}
+
+/* ── Card Body Text ── */
+.wis__card-body h3 {
+  font-family: 'Gilroy-SemiBold', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.25;
+  color: #111827;
+  margin: 0 0 10px 0;
+}
+
+.wis__card-body p {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 22px;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* ── Concentric Circles ── */
+/*
+  LEFT / RIGHT cards: phone overflows from top (top: -152px).
+  Phone img height ≈ 560px (252px wide, ~2.2 aspect ratio).
+  Phone center Y = -152 + 560/2 = -152 + 280 = 128px from card top.
+  We want circles centered there.
+*/
+.wis__card-circles {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  top: 128px;                 /* phone center for top-overflow cards */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/*
+  CENTER card: phone overflows from bottom (bottom: -158px).
+  Card height = 596px. Phone img height ≈ 560px.
+  Phone top = 596 - (-158) - 560 = 596 + 158 - 560 = 194px from card top.
+  Phone center Y = 194 + 280 = 474px from card top.
+*/
+.wis__card--center .wis__card-circles {
+  top: 474px;
+  transform: translate(-50%, -50%);
+}
+
+.wis__circle {
+  position: absolute;
+  border-radius: 50%;
+  background: transparent;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wis__circle--1 {
+  width: 500px;
+  height: 500px;
+  border: 1.09px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(180deg, #C8CDD5 0%, rgba(200, 205, 213, 0) 100%) border-box;
+}
+
+.wis__circle--2 {
+  width: 400px;
+  height: 400px;
+  border: 1.09px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(180deg, #C8CDD5 0%, rgba(200, 205, 213, 0) 100%) border-box;
+}
+
+.wis__circle--3 {
+  width: 300px;
+  height: 300px;
+  border: 1.09px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(180deg, #C8CDD5 0%, rgba(200, 205, 213, 0) 100%) border-box;
+}
+
+.wis__circle--4 {
+  width: 200px;
+  height: 200px;
+  border: 1.09px solid transparent;
+  background:
+    linear-gradient(#fff, #fff) padding-box,
+    linear-gradient(180deg, #C8CDD5 0%, rgba(200, 205, 213, 0) 100%) border-box;
+}
+
+/* ══════════════════════════════════════════
+   CAROUSEL  (mobile only — hidden on desktop)
+══════════════════════════════════════════ */
+.wis__carousel {
+  display: none;              /* hidden on desktop */
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+  width: 100%;
+}
+
+/* Viewport clips the card */
+.wis__carousel-viewport {
+  width: 100%;
+  max-width: 360px;
+  overflow: hidden;
+  border-radius: 16px;
+  position: relative;
+}
+
+/* Carousel card — same base as .wis__card */
+.wis__carousel-card {
+  width: 100%;
+  height: 520px;
+  border-radius: 16px;
+  background: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+/* ── Slide-in / slide-out animations ── */
+@keyframes slideInNext {
+  from { transform: translateX(100%); opacity: 0; }
+  to   { transform: translateX(0);    opacity: 1; }
+}
+@keyframes slideOutNext {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(-100%); opacity: 0; }
+}
+@keyframes slideInPrev {
+  from { transform: translateX(-100%); opacity: 0; }
+  to   { transform: translateX(0);     opacity: 1; }
+}
+@keyframes slideOutPrev {
+  from { transform: translateX(0);    opacity: 1; }
+  to   { transform: translateX(100%); opacity: 0; }
+}
+
+.wis__carousel-card--enter.wis__carousel-card--next {
+  animation: slideInNext 0.4s ease forwards;
+}
+.wis__carousel-card--exit.wis__carousel-card--next {
+  animation: slideOutNext 0.4s ease forwards;
+}
+.wis__carousel-card--enter.wis__carousel-card--prev {
+  animation: slideInPrev 0.4s ease forwards;
+}
+.wis__carousel-card--exit.wis__carousel-card--prev {
+  animation: slideOutPrev 0.4s ease forwards;
+}
+
+/* ── Phone image inside carousel card ── */
+.wis__carousel-card .wis__card-phone {
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* phone-at-top variant */
+.wis__carousel-card.wis__card--left .wis__card-phone,
+.wis__carousel-card.wis__card--right .wis__card-phone {
+  top: -100px;
+}
+
+/* phone-at-bottom variant */
+.wis__carousel-card.wis__card--center .wis__card-phone {
+  bottom: -120px;
+  top: auto;
+}
+
+.wis__carousel-card .wis__card-phone img {
+  width: 220px;
+  height: auto;
+  display: block;
+}
+
+/*
+  Carousel circles — phone 220px wide, aspect ~2.2 → height ≈ 484px
+  TOP cards: phone top = -100px → phone center Y = -100 + 484/2 = -100 + 242 = 142px
+  CENTER card: card height 520px, phone bottom = -120px
+    phone top = 520 - (-120) - 484 = 520 + 120 - 484 = 156px
+    phone center Y = 156 + 242 = 398px
+*/
+.wis__carousel-card .wis__card-circles {
+  top: 142px;
+}
+
+.wis__carousel-card.wis__card--center .wis__card-circles {
+  top: 398px;
+}
+
+/* ── Text body inside carousel card ── */
+.wis__carousel-card .wis__card-body {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: 24px 28px 32px;
+  text-align: center;
+  z-index: 3;
+  background: #ffffff;
+}
+
+/* text at bottom (phone-at-top cards) */
+.wis__carousel-card.wis__card--left .wis__card-body,
+.wis__carousel-card.wis__card--right .wis__card-body {
+  bottom: 0;
+  top: auto;
+}
+
+/* text at top (phone-at-bottom card) */
+.wis__carousel-card.wis__card--center .wis__card-body {
+  top: 0;
+  bottom: auto;
+}
+
+/* ── Arrows ── */
+.wis__carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.9);
+  color: #1a8fe3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s, transform 0.2s;
+}
+
+.wis__carousel-arrow:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.wis__carousel-arrow--prev { left: 0; }
+.wis__carousel-arrow--next { right: 0; }
+
+/* ── Dots ── */
+.wis__carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.wis__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s, transform 0.25s;
+}
+
+.wis__dot--active {
+  background: #ffffff;
+  transform: scale(1.4);
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 56.25rem) {         /* 900px */
+  .wis__inner {
+    padding: 0 1.5rem;
+  }
+
+  .wis__cards--desktop {
+    gap: 24px;
+  }
+
+  .wis__cards--desktop .wis__card {
+    height: 500px;
+  }
+
+  .wis__cards--desktop .wis__card--left .wis__card-phone img,
+  .wis__cards--desktop .wis__card--right .wis__card-phone img,
+  .wis__cards--desktop .wis__card--center .wis__card-phone img {
+    width: 230px;
+  }
+
+  .wis__cards--desktop .wis__card--center .wis__card-phone {
+    bottom: -150px;
+  }
+}
+
+@media (max-width: 48rem) {            /* 768px — switch to carousel */
+  .wis {
+    padding: 48px 0 60px 0;
+  }
+
+  .wis__h2 {
+    font-size: 30px;
+  }
+
+  /* Hide desktop grid, show carousel */
+  .wis__cards--desktop {
+    display: none;
+  }
+
+  .wis__carousel {
+    display: flex;
+  }
+}
+
+@media (max-width: 30rem) {            /* 480px */
+  .wis__inner {
+    padding: 0 1rem;
+  }
+
+  .wis__h2 {
+    font-size: 26px;
+  }
+
+  .wis__sub {
+    font-size: 14px;
+  }
+
+  .wis__carousel-card {
+    height: 480px;
+  }
+
+  .wis__carousel-card .wis__card-body h3 {
+    font-size: 20px;
+  }
+
+  .wis__carousel-card .wis__card-body p {
+    font-size: 13px;
+  }
+
+  .wis__carousel-card .wis__card-phone img {
+    width: 190px;
+  }
+
+  .wis__carousel-card.wis__card--left .wis__card-phone,
+  .wis__carousel-card.wis__card--right .wis__card-phone {
+    top: -80px;
+  }
+
+  .wis__carousel-card.wis__card--center .wis__card-phone {
+    bottom: -100px;
+  }
+}

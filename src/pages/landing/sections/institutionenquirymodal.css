@@ -1,0 +1,224 @@
+/* ===== INSTITUTION ENQUIRY MODAL ===== */
+
+/* Overlay */
+.iem__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: iemFadeIn 0.2s ease;
+}
+
+@keyframes iemFadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* Modal box */
+.iem__modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 720px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.2);
+  animation: iemSlideUp 0.25s ease;
+}
+
+@keyframes iemSlideUp {
+  from { transform: translateY(24px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+/* Scrollbar */
+.iem__modal::-webkit-scrollbar { width: 6px; }
+.iem__modal::-webkit-scrollbar-track { background: #f1f5f9; }
+.iem__modal::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+
+/* ── Header ── */
+.iem__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 28px 32px 20px;
+  border-bottom: 1px solid #E5E7EB;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 1;
+}
+
+.iem__title {
+  font-family: 'Gilroy-Bold', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  color: #111827;
+  margin: 0 0 6px 0;
+}
+
+.iem__subtitle {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  color: #6B7280;
+  margin: 0;
+  max-width: 520px;
+}
+
+.iem__close {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: 1px solid #E5E7EB;
+  background: #ffffff;
+  color: #374151;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.iem__close:hover {
+  background: #FEE2E2;
+  color: #EF4444;
+  border-color: #FCA5A5;
+}
+
+/* ── Form ── */
+.iem__form {
+  padding: 24px 32px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.iem__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* ── Field ── */
+.iem__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.iem__field--full {
+  grid-column: 1 / -1;
+}
+
+.iem__field label {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.iem__field input,
+.iem__field select,
+.iem__field textarea {
+  padding: 10px 14px;
+  border: 1px solid #E5E7EB;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #111827;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  resize: none;
+}
+
+.iem__field input::placeholder,
+.iem__field textarea::placeholder {
+  color: #9CA3AF;
+}
+
+.iem__field input:focus,
+.iem__field select:focus,
+.iem__field textarea:focus {
+  border-color: #1a8fe3;
+  box-shadow: 0 0 0 3px rgba(26, 143, 227, 0.1);
+}
+
+.iem__field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 36px;
+  cursor: pointer;
+}
+
+/* ── Checkboxes ── */
+.iem__checkboxes {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.iem__checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-size: 14px;
+  color: #374151;
+  cursor: pointer;
+}
+
+.iem__checkbox-label input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #1a8fe3;
+  cursor: pointer;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.iem__agree {
+  font-size: 13px;
+  color: #6B7280;
+}
+
+/* ── Submit ── */
+.iem__submit {
+  background: #1a8fe3;
+  color: #ffffff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  font-family: inherit;
+  margin-top: 8px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.iem__submit:hover {
+  background: #1580cc;
+  transform: translateY(-1px);
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .iem__modal { border-radius: 12px; }
+  .iem__header { padding: 20px 20px 16px; }
+  .iem__form { padding: 20px 20px 24px; }
+  .iem__row { grid-template-columns: 1fr; }
+  .iem__title { font-size: 18px; }
+}

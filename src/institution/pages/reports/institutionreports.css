@@ -1,0 +1,238 @@
+/* ══════════════════════════════════════════
+   Institution Reports   prefix: irpt-
+══════════════════════════════════════════ */
+
+.irpt-page {
+  min-height: 100%;
+  background: #f4f6f9;
+  font-family: 'Inter', system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* ── Page header ── */
+.irpt-page-header {
+  padding: 14px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.irpt-back-btn {
+  display: flex; align-items: center; gap: 8px;
+  background: none; border: none; cursor: pointer;
+  font-size: 18px; font-weight: 700; color: #111827;
+  font-family: inherit; padding: 0; transition: color 0.15s;
+}
+.irpt-back-btn:hover { color: #1ba8d5; }
+.irpt-breadcrumb { font-size: 12px; color: #9ca3af; }
+
+/* ── Body ── */
+.irpt-body {
+  padding: 20px 24px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ══════════════════════════════════════════
+   REPORT CARDS GRID — 3 columns
+══════════════════════════════════════════ */
+.irpt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.irpt-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  padding: 20px 20px 16px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.15s, transform 0.15s;
+}
+.irpt-card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+.irpt-card-icon {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: #e0f7ff;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 14px;
+}
+
+.irpt-card-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px;
+  line-height: 1.3;
+}
+
+.irpt-card-desc {
+  font-size: 12.5px;
+  color: #6b7280;
+  margin: 0 0 16px;
+  line-height: 1.5;
+  flex: 1;
+}
+
+.irpt-view-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 0;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+  width: 100%;
+}
+.irpt-view-btn:hover {
+  border-color: #1ba8d5;
+  background: #f0f9ff;
+  color: #1ba8d5;
+}
+
+/* ── Info notice ── */
+.irpt-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 14px 18px;
+  background: #e8f7fd;
+  border-radius: 10px;
+  border: 1px solid #b3e5f7;
+}
+.irpt-notice-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #0e7490;
+  margin-bottom: 3px;
+}
+.irpt-notice-desc {
+  font-size: 12.5px;
+  color: #0e7490;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════
+   REPORT VIEW — Coming Soon
+══════════════════════════════════════════ */
+.irpt-view-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05);
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.irpt-coming-soon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+/* ── Coming Soon graphic ── */
+.irpt-cs-graphic {
+  position: relative;
+  width: 220px;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Diagonal stripes */
+.irpt-cs-stripe {
+  position: absolute;
+  height: 6px;
+  border-radius: 3px;
+  background: #1ba8d5;
+  opacity: 0.7;
+}
+.irpt-cs-stripe--top {
+  width: 180px;
+  top: 18px;
+  left: 10px;
+  transform: rotate(-8deg);
+}
+.irpt-cs-stripe--bottom {
+  width: 120px;
+  bottom: 14px;
+  right: 10px;
+  transform: rotate(-8deg);
+  background: #111827;
+}
+
+/* Main bubble */
+.irpt-cs-bubble {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 14px 20px 18px;
+  border-radius: 12px 12px 12px 0;
+  box-shadow: 4px 6px 0 rgba(0,0,0,0.15);
+}
+.irpt-cs-bubble--dark {
+  background: #1e293b;
+}
+/* Speech bubble tail */
+.irpt-cs-bubble--dark::after {
+  content: '';
+  position: absolute;
+  bottom: -14px;
+  left: 0;
+  width: 0; height: 0;
+  border-style: solid;
+  border-width: 14px 14px 0 0;
+  border-color: #1e293b transparent transparent transparent;
+}
+
+.irpt-cs-line1 {
+  font-size: 22px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 1px;
+  line-height: 1.1;
+}
+.irpt-cs-line2 {
+  font-size: 28px;
+  font-weight: 900;
+  color: #1ba8d5;
+  letter-spacing: 2px;
+  line-height: 1.1;
+}
+
+.irpt-cs-label {
+  font-size: 15px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .irpt-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 700px) {
+  .irpt-grid { grid-template-columns: 1fr; }
+  .irpt-body { padding: 14px; }
+}

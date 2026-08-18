@@ -1,0 +1,178 @@
+/* ===== CTA BANNER SECTION ===== */
+.cta {
+  background: linear-gradient(180deg, #1a8fe3 0%, #3ab5f5 100%);
+  padding: 72px 0 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Grid pattern — clearly visible squares ── */
+.cta__grid-pattern {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+/* ── Inner ── */
+.cta__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Text block — centered ── */
+.cta__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding-bottom: 48px;
+  max-width: 620px;
+}
+
+.cta__h2 {
+  font-family: 'Gilroy-Bold', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 700;
+  font-size: 42px;
+  line-height: 1.2;
+  color: #ffffff;
+  margin: 0;
+}
+
+.cta__sub {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 24px;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 460px;
+}
+
+/* ── Store buttons ── */
+.cta__btns {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 8px;
+}
+
+.cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #111827;
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.cta__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* ══════════════════════════════════════════
+   PHONES — 3 phones, top-aligned, cropped at bottom
+══════════════════════════════════════════ */
+.cta__phones {
+  display: flex;
+  align-items: flex-start;      /* phones start from top */
+  justify-content: center;
+  width: 100%;
+  height: 320px;                /* fixed height — bottom gets cropped */
+  overflow: hidden;             /* THIS crops the bottom */
+}
+
+/* ── Base phone wrapper ── */
+.cta__phone {
+  flex-shrink: 0;
+  position: relative;
+  line-height: 0;
+}
+
+.cta__phone img {
+  display: block;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 48px rgba(0, 0, 0, 0.35));
+}
+
+/* ── Center phone — tallest, full size ── */
+.cta__phone--center {
+  z-index: 3;
+  margin: 0 -20px;
+}
+
+.cta__phone--center img {
+  width: 280px;
+  height: auto;
+}
+
+/* ── Left phone — same size, starts lower so less is visible ── */
+.cta__phone--left {
+  z-index: 2;
+  margin-top: 60px;             /* push down → less phone visible at bottom */
+}
+
+.cta__phone--left img {
+  width: 240px;
+  height: auto;
+}
+
+/* ── Right phone — mirror of left ── */
+.cta__phone--right {
+  z-index: 2;
+  margin-top: 60px;
+}
+
+.cta__phone--right img {
+  width: 240px;
+  height: auto;
+}
+
+/* ── Responsive ── */
+@media (max-width: 56.25rem) {   /* 900px */
+  .cta__h2 { font-size: 34px; }
+
+  .cta__phones { height: 280px; }
+  .cta__phone--center img { width: 240px; }
+  .cta__phone--left img,
+  .cta__phone--right img  { width: 200px; }
+  .cta__phone--left,
+  .cta__phone--right { margin-top: 50px; }
+}
+
+@media (max-width: 48rem) {      /* 768px */
+  .cta { padding: 56px 0 0; }
+  .cta__h2 { font-size: 28px; }
+
+  .cta__phone--left,
+  .cta__phone--right { display: none; }
+
+  .cta__phone--center { margin: 0; }
+  .cta__phones { height: 280px; }
+  .cta__phone--center img { width: 240px; }
+}
+
+@media (max-width: 30rem) {      /* 480px */
+  .cta { padding: 40px 0 0; }
+  .cta__h2 { font-size: 24px; }
+  .cta__phones { height: 240px; }
+  .cta__phone--center img { width: 200px; }
+}

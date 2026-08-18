@@ -1,0 +1,565 @@
+/* ── Settlements Page ── prefix: st- */
+
+.st-page { min-height: 100%; background: #f4f6f9; }
+
+/* Header */
+.st-page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 24px 14px; background: #fff; border-bottom: 1px solid #e8eaf0;
+}
+.st-page-title { font-size: 22px; font-weight: 700; color: #111827; margin: 0; }
+.st-breadcrumb  { font-size: 12px; color: #9ca3af; }
+
+/* Body */
+.st-body { padding: 20px 24px; }
+
+/* Toolbar */
+.st-toolbar {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px; flex-wrap: wrap; gap: 12px;
+}
+.st-section-title { font-size: 16px; font-weight: 700; color: #111827; margin: 0; }
+.st-toolbar-actions { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+.st-search {
+  display: flex; align-items: center; gap: 8px; border: 1px solid #e5e7eb;
+  border-radius: 8px; padding: 7px 14px; background: #fff; color: #9ca3af; min-width: 220px;
+}
+.st-search-input {
+  border: none; outline: none; font-size: 13px; color: #374151;
+  background: transparent; width: 100%; font-family: inherit;
+}
+.st-search-input::placeholder { color: #9ca3af; }
+
+.st-filter-btn {
+  display: flex; align-items: center; gap: 6px; padding: 7px 14px;
+  border: 1px solid #e5e7eb; border-radius: 8px; background: #fff;
+  font-size: 13px; color: #374151; cursor: pointer; font-family: inherit;
+  transition: border-color 0.15s, color 0.15s;
+}
+.st-filter-btn:hover { border-color: #1ba8d5; color: #1ba8d5; }
+
+/* Table card */
+.st-table-card {
+  background: #fff; border-radius: 12px; border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05); overflow: hidden;
+}
+.st-table-wrapper { overflow-x: auto; }
+
+.st-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+
+.st-table thead tr { background: #f9fafb; border-bottom: 1px solid #e8eaf0; }
+.st-table th {
+  padding: 12px 16px; text-align: left; font-size: 12.5px;
+  font-weight: 600; color: #374151; white-space: nowrap;
+}
+
+.st-table tbody tr { border-bottom: 1px solid #f3f4f6; transition: background 0.12s; }
+.st-table tbody tr:last-child { border-bottom: none; }
+.st-table tbody tr:hover { background: #fafafa; }
+
+.st-table td { padding: 13px 16px; color: #374151; white-space: nowrap; }
+.st-td-name { font-weight: 500; color: #111827; }
+
+/* Status badges */
+.st-badge {
+  display: inline-block; padding: 3px 12px;
+  border-radius: 20px; font-size: 12px; font-weight: 600;
+}
+.st-badge-approved  { background: #dcfce7; color: #16a34a; }
+.st-badge-rejected  { background: #fee2e2; color: #dc2626; }
+.st-badge-requested { background: #fff7ed; color: #ea580c; }
+
+/* Action eye button */
+.st-action-btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px; border: 1px solid #e5e7eb; border-radius: 8px;
+  background: #fff; color: #6b7280; cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.st-action-btn:hover { border-color: #1ba8d5; color: #1ba8d5; background: #f0f9ff; }
+
+/* Empty */
+.st-empty { text-align: center; color: #9ca3af; padding: 32px 16px; }
+
+/* Pagination */
+.st-pagination {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 20px; border-top: 1px solid #f3f4f6; flex-wrap: wrap; gap: 10px;
+}
+
+.st-page-prev, .st-page-next {
+  display: flex; align-items: center; gap: 6px; padding: 7px 16px;
+  border: 1.5px solid #1ba8d5; border-radius: 8px; background: #fff;
+  font-size: 13px; font-weight: 600; color: #1ba8d5; cursor: pointer;
+  font-family: inherit; transition: background 0.15s;
+}
+.st-page-prev:hover, .st-page-next:hover { background: #e0f7ff; }
+.st-page-prev:disabled, .st-page-next:disabled { opacity: 0.45; cursor: default; }
+.st-page-prev:disabled:hover, .st-page-next:disabled:hover { background: #fff; }
+
+.st-page-numbers { display: flex; align-items: center; gap: 4px; }
+
+.st-page-num {
+  min-width: 32px; height: 32px; display: inline-flex; align-items: center;
+  justify-content: center; border-radius: 6px; border: none; background: transparent;
+  font-size: 13px; font-weight: 500; color: #374151; cursor: pointer;
+  font-family: inherit; transition: background 0.12s, color 0.12s; padding: 0 4px;
+}
+.st-page-num:hover { background: #f3f4f6; }
+.st-page-num.active { background: #1ba8d5; color: #fff; font-weight: 700; }
+
+.st-page-ellipsis { font-size: 13px; color: #9ca3af; padding: 0 4px; user-select: none; }
+
+/* Responsive */
+@media (max-width: 860px) {
+  .st-body { padding: 16px; }
+  .st-page-header { padding: 14px 16px; }
+}
+@media (max-width: 600px) {
+  .st-toolbar { flex-direction: column; align-items: flex-start; }
+  .st-toolbar-actions { width: 100%; }
+  .st-search { flex: 1; min-width: unset; }
+  .st-pagination { flex-direction: column; align-items: center; }
+}
+
+/* ════════════════════════════════════════
+   Settlement Details Modal
+════════════════════════════════════════ */
+
+.st-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.st-modal {
+  background: #fff;
+  border-radius: 14px;
+  width: 100%;
+  max-width: 620px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.st-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+}
+
+.st-modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.st-modal-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+.st-modal-close:hover { background: #f3f4f6; color: #111827; }
+
+.st-modal-divider {
+  height: 1px;
+  background: #e8eaf0;
+  margin: 0;
+}
+
+.st-modal-body {
+  padding: 20px 24px;
+  overflow-y: auto;
+  max-height: 60vh;
+}
+
+.st-modal-section-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+/* Info grid — 4 columns */
+.st-modal-info-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.st-modal-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.st-modal-info-label {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.st-modal-info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Earnings grid — 3 cards */
+.st-modal-earnings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.st-modal-earning-card {
+  background: #f0f9ff;
+  border-radius: 8px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.st-modal-earning-label {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 400;
+}
+
+.st-modal-earning-value {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+}
+
+/* Modal footer */
+.st-modal-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 24px;
+}
+
+/* Download Summary button */
+.st-btn-download {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 24px;
+  background: #111827;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.st-btn-download:hover { background: #1f2937; }
+
+/* Cancel button */
+.st-btn-cancel {
+  padding: 10px 24px;
+  background: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.st-btn-cancel:hover { background: #f9fafb; }
+
+/* Approve button */
+.st-btn-approve {
+  padding: 10px 24px;
+  background: #16a34a;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.st-btn-approve:hover { background: #15803d; }
+
+/* Reject button */
+.st-btn-reject {
+  padding: 10px 24px;
+  background: #dc2626;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.st-btn-reject:hover { background: #b91c1c; }
+
+/* Responsive */
+@media (max-width: 600px) {
+  .st-modal-info-grid { grid-template-columns: repeat(2, 1fr); }
+  .st-modal-earnings-grid { grid-template-columns: 1fr; }
+  .st-modal-footer { flex-wrap: wrap; justify-content: stretch; }
+  .st-btn-download, .st-btn-cancel, .st-btn-approve, .st-btn-reject {
+    flex: 1; text-align: center; justify-content: center;
+  }
+}
+
+/* ════════════════════════════════════════
+   Confirmation Modals (Approve / Reject)
+════════════════════════════════════════ */
+
+.st-confirm-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 32px 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+}
+
+/* Approve modal — light blue gradient bg */
+.st-confirm-modal-approve {
+  background: linear-gradient(180deg, #daf3fb 0%, #f0f9ff 50%, #fff 100%);
+}
+
+/* Reject modal — light red/pink gradient bg, centered */
+.st-confirm-modal-reject {
+  background: linear-gradient(180deg, #ffd6d6 0%, #fff5f5 50%, #fff 100%);
+  align-items: center;
+  text-align: center;
+}
+
+/* Icon circle */
+.st-confirm-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.st-confirm-icon-approve {
+  background: #fff;
+  box-shadow: 0 2px 16px rgba(27,168,213,0.18);
+}
+
+.st-confirm-icon-reject {
+  background: #dc2626;
+  box-shadow: 0 2px 16px rgba(220,38,38,0.25);
+}
+
+.st-confirm-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 12px;
+}
+
+.st-confirm-desc {
+  font-size: 13.5px;
+  color: #6b7280;
+  line-height: 1.65;
+  margin: 0 0 28px;
+  max-width: 300px;
+}
+
+/* Approve actions — side by side */
+.st-confirm-actions-approve {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+/* Reject actions — Cancel small + Reject full width stacked */
+.st-confirm-actions-reject {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+/* Confirm Approval button */
+.st-btn-confirm-approve {
+  padding: 11px 28px;
+  background: #1ba8d5;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  white-space: nowrap;
+  flex: 1;
+}
+.st-btn-confirm-approve:hover { background: #1596be; }
+
+/* Reject Settlement button — full width */
+.st-btn-reject-confirm {
+  padding: 12px 24px;
+  background: #dc2626;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  width: 100%;
+}
+.st-btn-reject-confirm:hover { background: #b91c1c; }
+
+/* Cancel button in approve modal */
+.st-btn-cancel-approve {
+  padding: 11px 28px;
+  background: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  flex: 1;
+}
+.st-btn-cancel-approve:hover { background: #f9fafb; }
+
+/* Cancel button in reject modal — smaller */
+.st-btn-cancel-reject {
+  padding: 9px 24px;
+  background: transparent;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+.st-btn-cancel-reject:hover { color: #111827; }
+
+/* Reject reason dropdown */
+.st-reject-dropdown-wrap {
+  width: 100%;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.st-reject-label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.st-reject-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  color: #111827;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.st-reject-trigger:hover { border-color: #dc2626; }
+
+.st-reject-panel {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  z-index: 200;
+  overflow: hidden;
+}
+
+.st-reject-option {
+  width: 100%;
+  padding: 11px 14px;
+  text-align: left;
+  background: #fff;
+  border: none;
+  font-size: 13.5px;
+  color: #111827;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s;
+}
+.st-reject-option:hover { background: #f3f4f6; }
+.st-reject-option.selected { background: #1ba8d5; color: #fff; }
+
+/* Custom Note textarea */
+.st-reject-textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #111827;
+  background: #fff;
+  outline: none;
+  resize: vertical;
+  min-height: 100px;
+  font-family: inherit;
+  line-height: 1.55;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+.st-reject-textarea::placeholder { color: #9ca3af; }
+.st-reject-textarea:focus { border-color: #dc2626; }
+
+@media (max-width: 480px) {
+  .st-confirm-modal { padding: 28px 20px 22px; }
+  .st-confirm-actions-approve { flex-direction: column; }
+  .st-btn-cancel-approve, .st-btn-confirm-approve { width: 100%; text-align: center; }
+}

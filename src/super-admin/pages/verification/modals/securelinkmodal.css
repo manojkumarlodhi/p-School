@@ -1,0 +1,187 @@
+/* ── Secure Link Modal ── prefix: sl- */
+
+.sl-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 16px;
+}
+
+.sl-modal {
+  background: #fff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.sl-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+}
+
+.sl-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.sl-close-btn {
+  width: 32px;
+  height: 32px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #6b7280;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.15s, color 0.15s;
+}
+.sl-close-btn:hover { background: #f3f4f6; color: #111827; }
+
+.sl-divider {
+  height: 1px;
+  background: #f0f2f5;
+}
+
+/* ── Body ── */
+.sl-body {
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Email + Platform 2-col row */
+.sl-info-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.sl-info-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.sl-info-label {
+  font-size: 12px;
+  color: #9ca3af;
+  font-weight: 400;
+}
+
+.sl-info-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* Link section */
+.sl-link-section {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sl-link-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.sl-link-box {
+  flex: 1;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 14px;
+  background: #f9fafb;
+  overflow: hidden;
+}
+
+.sl-link-text {
+  font-size: 13px;
+  color: #374151;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+}
+
+.sl-copy-btn {
+  padding: 10px 18px;
+  background: #16a34a;
+  border: none;
+  border-radius: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.15s;
+  flex-shrink: 0;
+}
+.sl-copy-btn:hover { background: #15803d; }
+.sl-copy-btn--copied { background: #15803d; }
+
+/* ── Footer ── */
+.sl-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
+}
+
+.sl-btn-cancel {
+  flex: 1;
+  padding: 11px 0;
+  background: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  text-align: center;
+}
+.sl-btn-cancel:hover { background: #f9fafb; }
+
+.sl-btn-send {
+  flex: 2;
+  padding: 11px 0;
+  background: #1ba8d5;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  text-align: center;
+}
+.sl-btn-send:hover { background: #1596be; }
+
+@media (max-width: 480px) {
+  .sl-modal { border-radius: 12px; }
+  .sl-info-row { grid-template-columns: 1fr; }
+  .sl-link-row { flex-direction: column; align-items: stretch; }
+  .sl-footer { flex-direction: column-reverse; }
+  .sl-btn-cancel, .sl-btn-send { flex: unset; width: 100%; }
+}

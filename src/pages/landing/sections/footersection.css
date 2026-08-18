@@ -1,0 +1,183 @@
+/* ===== FOOTER ===== */
+.ftr {
+  background: #f0f8ff;
+  border-top: 1px solid #E5E7EB;
+  padding: 56px 0 0;
+}
+
+.ftr__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Top grid ── */
+.ftr__grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  gap: 48px;
+  padding-bottom: 40px;
+}
+
+/* ── Brand ── */
+.ftr__logo {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  object-position: left center;
+  display: block;
+  margin-bottom: 16px;
+}
+
+.ftr__brand-desc {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: #4B5563;
+  margin: 0;
+  max-width: 260px;
+}
+
+/* ── Columns ── */
+.ftr__col-title {
+  font-family: 'Gilroy-Bold', 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  color: #111827;
+  margin: 0 0 16px 0;
+}
+
+.ftr__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.ftr__link {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-size: 14px;
+  color: #4B5563;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.ftr__link:hover {
+  color: #1a8fe3;
+}
+
+/* First link in Product col — blue (active) */
+.ftr__links li:first-child .ftr__link {
+  color: #1a8fe3;
+  font-weight: 600;
+}
+
+/* ── Store buttons ── */
+.ftr__store-btns {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ftr__store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #ffffff;
+  color: #111827;
+  border: 1px solid #E5E7EB;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: fit-content;
+}
+
+.ftr__store-btn:hover {
+  border-color: #1a8fe3;
+  box-shadow: 0 2px 8px rgba(26, 143, 227, 0.15);
+}
+
+/* ── Bottom bar ── */
+.ftr__bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
+  border-top: 1px solid #E5E7EB;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ftr__copy {
+  font-family: 'Gilroy-Medium', 'Inter', sans-serif;
+  font-size: 13px;
+  color: #6B7280;
+  margin: 0;
+}
+
+/* ── Social icons ── */
+.ftr__social {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.ftr__social-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--social-bg, #374151);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  transition: transform 0.2s, opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.ftr__social-icon:hover {
+  transform: translateY(-2px);
+  opacity: 0.88;
+}
+
+/* ── Responsive ── */
+@media (max-width: 56.25rem) {   /* 900px */
+  .ftr__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .ftr__brand {
+    grid-column: 1 / -1;
+  }
+
+  .ftr__brand-desc { max-width: 100%; }
+}
+
+@media (max-width: 48rem) {      /* 768px */
+  .ftr { padding: 40px 0 0; }
+
+  .ftr__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 30rem) {      /* 480px */
+  .ftr__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ftr__bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}

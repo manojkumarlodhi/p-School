@@ -1,0 +1,190 @@
+/* ── Individual Instructor Notification ── prefix: inotif- */
+
+.inotif-page {
+  padding: 28px 32px;
+  min-height: 100%;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+  background: #f8fafc;
+}
+
+/* ── Page header ── */
+.inotif-page-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.inotif-page-title {
+  font-size: 22px;
+  font-weight: 800;
+  color: #111827;
+  margin: 0;
+  flex: 1;
+}
+.inotif-breadcrumb {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.inotif-back-btn {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  border: 1px solid #e5e7eb;
+  background: #fff;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; color: #374151; flex-shrink: 0;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+}
+.inotif-back-btn:hover { background: #f0f9ff; border-color: #1ba8d5; color: #1ba8d5; }
+
+/* ── Header action buttons ── */
+.inotif-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.inotif-action-btn {
+  padding: 7px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+}
+.inotif-action-btn:hover { border-color: #1ba8d5; color: #1ba8d5; background: #f0f9ff; }
+
+.inotif-delete-btn {
+  width: 36px; height: 36px;
+  border-radius: 9px;
+  border: 1.5px solid #fee2e2;
+  background: #fef2f2;
+  color: #ef4444;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.inotif-delete-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.inotif-delete-btn:not(:disabled):hover { background: #fee2e2; }
+
+/* ── Content card ── */
+.inotif-content-card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #f0f2f5;
+  box-shadow: 0 1px 8px rgba(0,0,0,0.04);
+  padding: 20px 24px;
+  max-width: 760px;
+}
+
+/* ── Section labels ── */
+.inotif-section-label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  margin: 20px 0 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f3f4f6;
+}
+.inotif-section-label:first-of-type { margin-top: 0; }
+
+/* ── Notification item ── */
+.inotif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 12px;
+  border-radius: 12px;
+  margin-bottom: 2px;
+  cursor: pointer;
+  transition: background 0.15s;
+  border: 1.5px solid transparent;
+}
+.inotif-item:hover { background: #f8fafc; }
+.inotif-item.selected {
+  background: #f0f9ff;
+  border-color: #bae6fd;
+}
+
+.inotif-check {
+  margin-top: 3px;
+  width: 16px; height: 16px;
+  accent-color: #1ba8d5;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.inotif-icon-wrap {
+  width: 40px; height: 40px;
+  border-radius: 10px;
+  background: #f0f9ff;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.inotif-body {
+  flex: 1;
+  min-width: 0;
+}
+.inotif-text {
+  font-size: 13.5px;
+  color: #374151;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+.inotif-link {
+  color: #1ba8d5;
+  font-weight: 500;
+}
+.inotif-from {
+  font-size: 12.5px;
+  color: #1ba8d5;
+  font-weight: 600;
+}
+
+.inotif-time {
+  font-size: 12px;
+  color: #9ca3af;
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding-top: 2px;
+}
+
+/* ── Empty state ── */
+.inotif-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  gap: 12px;
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #f0f2f5;
+  max-width: 760px;
+}
+.inotif-empty-icon {
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  display: flex; align-items: center; justify-content: center;
+}
+.inotif-empty-text {
+  font-size: 14px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+  .inotif-page { padding: 16px; }
+  .inotif-content-card { padding: 16px; }
+  .inotif-item { padding: 11px 8px; }
+}

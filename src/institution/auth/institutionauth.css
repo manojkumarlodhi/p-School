@@ -1,0 +1,315 @@
+/* ── Institution Auth Pages ── prefix: inst-auth- */
+
+.inst-auth-page {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow: hidden;
+  background: #6b7280;
+}
+
+.inst-auth-card {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── LEFT: white form panel ── */
+.inst-auth-form-panel {
+  flex: 0 0 50%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  padding: 60px 80px;
+  overflow-y: auto;
+}
+
+.inst-auth-form-inner {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* ── RIGHT: light blue orbit panel ── */
+.inst-auth-image-panel {
+  flex: 0 0 50%;
+  width: 50%;
+  height: 100%;
+  position: relative;
+  background: linear-gradient(160deg, #e0f7ff 0%, #b3ecff 40%, #7dd3fc 100%);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Top text */
+.inst-auth-image-top {
+  position: relative;
+  z-index: 3;
+  padding: 40px 36px 0;
+}
+
+.inst-auth-image-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 14px;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+.inst-auth-image-subtitle {
+  font-size: 13px;
+  color: #334155;
+  line-height: 1.65;
+  max-width: 380px;
+}
+
+/* ── Orbit illustration ── */
+.inst-auth-orbit-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 30px;
+  min-height: 0;
+}
+
+.inst-auth-orbit-svg {
+  width: 100%;
+  height: 100%;
+  max-width: 420px;
+  max-height: 420px;
+}
+
+/* ── Form elements (reuse auth.css classes via inst-auth- prefix) ── */
+.inst-auth-heading {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  text-align: center;
+  margin-bottom: 8px;
+  font-family: system-ui, 'Segoe UI', Roboto, sans-serif;
+}
+
+.inst-auth-subheading {
+  font-size: 13px;
+  color: #6b7280;
+  text-align: center;
+  line-height: 1.55;
+  margin-bottom: 28px;
+}
+
+/* Form box */
+.inst-auth-form-box {
+  padding: 28px 0;
+}
+
+.inst-auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.inst-auth-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.inst-auth-label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.inst-auth-hint {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 3px;
+}
+
+.inst-auth-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 13.5px;
+  color: #111827;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+.inst-auth-input::placeholder { color: #9ca3af; }
+.inst-auth-input:focus {
+  border-color: #1ba8d5;
+  box-shadow: 0 0 0 3px rgba(27, 168, 213, 0.12);
+}
+
+.inst-auth-input-wrap {
+  position: relative;
+}
+.inst-auth-input-wrap .inst-auth-input {
+  padding-right: 44px;
+}
+
+.inst-auth-eye-btn {
+  position: absolute;
+  right: 13px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #9ca3af;
+  display: flex;
+  align-items: center;
+  padding: 0;
+}
+.inst-auth-eye-btn:hover { color: #1ba8d5; }
+
+/* Row: remember + forgot */
+.inst-auth-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.inst-auth-checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+}
+.inst-auth-checkbox-label input[type='checkbox'] {
+  accent-color: #1ba8d5;
+  width: 14px;
+  height: 14px;
+}
+
+.inst-auth-link {
+  color: #1ba8d5;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+}
+.inst-auth-link:hover { text-decoration: underline; }
+
+/* Primary button */
+.inst-auth-btn {
+  width: 100%;
+  padding: 12px;
+  background: #1ba8d5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  font-family: inherit;
+}
+.inst-auth-btn:hover  { background: #1596be; }
+.inst-auth-btn:active { transform: scale(0.98); }
+
+/* Footer text */
+.inst-auth-footer-text {
+  text-align: center;
+  font-size: 13px;
+  color: #6b7280;
+  margin-top: 14px;
+}
+
+/* OTP inputs */
+.inst-auth-otp-inputs {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.inst-auth-otp-input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+  border: 1.5px solid #d1d5db;
+  border-radius: 6px;
+  background: #f9fafb;
+  color: #111827;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+}
+.inst-auth-otp-input:focus {
+  border-color: #1ba8d5;
+  box-shadow: 0 0 0 3px rgba(27, 168, 213, 0.12);
+  background: #fff;
+}
+.inst-auth-otp-input.filled { border-color: #1ba8d5; background: #fff; }
+
+.inst-auth-resend-row {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 13px;
+  color: #6b7280;
+}
+.inst-auth-resend-timer span { color: #1ba8d5; font-weight: 600; }
+.inst-auth-resend-btn {
+  background: none; border: none; color: #1ba8d5;
+  font-weight: 600; cursor: pointer; font-size: 13px;
+  padding: 0; font-family: inherit;
+}
+.inst-auth-resend-btn:disabled { opacity: 0.45; cursor: default; }
+.inst-auth-resend-btn:not(:disabled):hover { text-decoration: underline; }
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .inst-auth-page { height: auto; min-height: 100vh; }
+  .inst-auth-card { flex-direction: column; height: auto; }
+  .inst-auth-form-panel {
+    flex: none; width: 100%; height: auto;
+    min-height: 60vh; padding: 48px 32px; order: 2;
+  }
+  .inst-auth-image-panel {
+    flex: none; width: 100%; height: 50vh; min-height: 320px; order: 1;
+  }
+  .inst-auth-orbit-container { padding: 8px 16px 16px; }
+}
+
+@media (max-width: 480px) {
+  .inst-auth-form-panel { padding: 36px 20px; }
+  .inst-auth-form-box { padding: 20px 16px; }
+  .inst-auth-otp-input { width: 42px; height: 42px; font-size: 17px; }
+}
+
+/* Error states */
+.inst-auth-input.error {
+  border-color: #ef4444;
+  background-color: #fef2f2;
+}
+
+.inst-auth-input.error:focus {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.inst-auth-error {
+  display: block;
+  color: #dc2626;
+  font-size: 13px;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+.inst-auth-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

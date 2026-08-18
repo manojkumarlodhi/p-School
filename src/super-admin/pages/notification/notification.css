@@ -1,0 +1,121 @@
+.notif-page {
+  min-height: 100%;
+  background: #f4f6f9;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.notif-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1.5px dashed #1ba8d5;
+  width: 100%;
+  max-width: 600px;
+  padding: 0 0 24px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.notif-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid #f0f2f5;
+}
+
+.notif-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #1ba8d5;
+  margin: 0;
+}
+
+.notif-clear {
+  background: none;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1ba8d5;
+  cursor: pointer;
+  padding: 0;
+}
+
+.notif-clear:hover { text-decoration: underline; }
+
+.notif-list {
+  padding: 8px 0;
+}
+
+.notif-group-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  padding: 12px 24px 6px;
+}
+
+.notif-group-items {
+  border: 1.5px dashed #b3e5fc;
+  border-radius: 8px;
+  margin: 0 16px;
+  overflow: hidden;
+}
+
+.notif-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f9ff;
+  transition: background 0.15s;
+}
+
+.notif-item:last-child { border-bottom: none; }
+.notif-item:hover { background: #f0f9ff; }
+
+.notif-item-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #e0f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.notif-item-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.notif-item-text {
+  font-size: 13px;
+  color: #374151;
+  line-height: 1.5;
+  margin: 0 0 4px;
+}
+
+.notif-item-org {
+  font-size: 12px;
+  color: #1ba8d5;
+  font-weight: 500;
+}
+
+.notif-item-time {
+  font-size: 11px;
+  color: #9ca3af;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .notif-page { padding: 16px; }
+  .notif-card { max-width: 100%; }
+  .notif-header { padding: 16px 16px 12px; }
+  .notif-group-items { margin: 0 8px; }
+  .notif-item { padding: 12px; gap: 10px; }
+  .notif-item-icon { width: 36px; height: 36px; }
+}

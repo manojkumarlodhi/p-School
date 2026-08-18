@@ -1,0 +1,184 @@
+/* ── Create Institutions Plan ── prefix: cip- */
+
+.cip-page { min-height: 100%; background: #f4f6f9; }
+
+/* ── Page header ── */
+.cip-page-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 24px; background: #fff; border-bottom: 1px solid #e8eaf0;
+  flex-wrap: wrap; gap: 8px;
+}
+.cip-header-left { display: flex; align-items: center; gap: 12px; }
+.cip-back-btn {
+  background: none; border: none; cursor: pointer; color: #374151;
+  display: flex; align-items: center; padding: 5px; border-radius: 7px;
+  transition: background 0.15s;
+}
+.cip-back-btn:hover { background: #f3f4f6; }
+.cip-page-title { font-size: 20px; font-weight: 700; color: #111827; margin: 0; }
+.cip-breadcrumb { font-size: 12px; color: #9ca3af; white-space: nowrap; }
+
+/* ── Body ── */
+.cip-body { padding: 24px; }
+
+/* ── Form card ── */
+.cip-form {
+  background: #fff; border-radius: 14px; border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.05); padding: 28px 28px 100px;
+  display: flex; flex-direction: column; gap: 22px;
+  max-width: 700px;
+}
+
+/* ── Field ── */
+.cip-field { display: flex; flex-direction: column; gap: 7px; }
+.cip-label { font-size: 12.5px; color: #6b7280; font-weight: 500; }
+
+.cip-input, .cip-textarea {
+  border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 10px 14px;
+  font-size: 13.5px; color: #374151; font-family: inherit; outline: none;
+  background: #fff; transition: border-color 0.15s; width: 100%; box-sizing: border-box;
+}
+.cip-input:focus, .cip-textarea:focus { border-color: #1ba8d5; }
+.cip-textarea { resize: vertical; }
+
+/* ── Custom dropdown ── */
+.cip-dropdown-wrap { position: relative; }
+.cip-select-btn {
+  display: flex; align-items: center; justify-content: space-between;
+  border: 1.5px solid #e5e7eb; border-radius: 8px; padding: 10px 14px;
+  font-size: 13.5px; font-family: inherit; background: #fff; cursor: pointer;
+  outline: none; transition: border-color 0.15s; width: 100%; text-align: left;
+}
+.cip-select-btn:hover, .cip-select-btn--open { border-color: #1ba8d5; }
+.cip-select-ph { color: #9ca3af; }
+.cip-select-val { color: #374151; }
+.cip-chevron { flex-shrink: 0; color: #6b7280; transition: transform 0.2s; }
+.cip-chevron--up { transform: rotate(180deg); }
+.cip-dropdown-list {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  background: #fff; border: 1.5px solid #e5e7eb; border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12); z-index: 20;
+  list-style: none; margin: 0; padding: 4px 0; overflow: hidden;
+}
+.cip-dropdown-item {
+  padding: 10px 16px; font-size: 13.5px; color: #374151;
+  cursor: pointer; transition: background 0.12s;
+}
+.cip-dropdown-item:hover { background: #f0f9ff; color: #1ba8d5; }
+.cip-dropdown-item--active { background: #1ba8d5; color: #fff; font-weight: 600; }
+.cip-dropdown-item--active:hover { background: #1596be; }
+
+/* ── Pricing row ── */
+.cip-pricing-row {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px;
+}
+.cip-price-col { display: flex; flex-direction: column; gap: 8px; }
+.cip-price-header {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cip-price-input-wrap {
+  display: flex; align-items: center;
+  border: 1.5px solid #e5e7eb; border-radius: 8px;
+  padding: 9px 14px; background: #fff; transition: border-color 0.15s;
+}
+.cip-price-input-wrap:focus-within { border-color: #1ba8d5; }
+.cip-currency { font-size: 13.5px; color: #6b7280; margin-right: 4px; }
+.cip-price-input {
+  border: none; outline: none; font-size: 13.5px; color: #374151;
+  font-family: inherit; background: transparent; width: 100%;
+}
+.cip-price-input:disabled { color: #9ca3af; }
+
+/* ── Toggle ── */
+.cip-toggle {
+  width: 42px; height: 24px; border-radius: 12px; border: none;
+  background: #d1d5db; cursor: pointer; position: relative;
+  transition: background 0.2s; padding: 0; flex-shrink: 0;
+}
+.cip-toggle--on { background: #1ba8d5; }
+.cip-toggle-thumb {
+  position: absolute; top: 3px; left: 3px;
+  width: 18px; height: 18px; border-radius: 50%; background: #fff;
+  transition: transform 0.2s; box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+.cip-toggle--on .cip-toggle-thumb { transform: translateX(18px); }
+
+/* ── Overage card ── */
+.cip-overage-card {
+  background: #f9fafb; border: 1px solid #e8eaf0;
+  border-radius: 10px; padding: 14px 16px;
+}
+.cip-overage-header {
+  display: flex; align-items: flex-start; justify-content: space-between; gap: 12px;
+}
+.cip-overage-title { font-size: 13.5px; font-weight: 600; color: #111827; margin: 0 0 3px; }
+.cip-overage-sub { font-size: 12px; color: #9ca3af; margin: 0; }
+
+/* ── Features ── */
+.cip-features-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.cip-add-feature-btn {
+  font-size: 13px; font-weight: 600; color: #1ba8d5; background: none;
+  border: none; cursor: pointer; font-family: inherit; padding: 0;
+  transition: opacity 0.15s;
+}
+.cip-add-feature-btn:hover { opacity: 0.75; }
+.cip-features-list { display: flex; flex-direction: column; gap: 8px; }
+.cip-feature-row { display: flex; align-items: center; gap: 10px; }
+.cip-feature-input {
+  flex: 1; border: 1.5px solid #e5e7eb; border-radius: 8px;
+  padding: 10px 14px; font-size: 13.5px; color: #374151;
+  font-family: inherit; outline: none; background: #fff;
+  transition: border-color 0.15s;
+}
+.cip-feature-input:focus { border-color: #1ba8d5; }
+.cip-feature-del {
+  width: 32px; height: 32px; border-radius: 7px; border: 1px solid #fecaca;
+  background: #fff5f5; color: #ef4444; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; transition: background 0.15s;
+}
+.cip-feature-del:hover { background: #fee2e2; }
+
+/* ── Admin features ── */
+.cip-admin-list {
+  background: #f9fafb; border: 1px solid #e8eaf0;
+  border-radius: 10px; overflow: hidden;
+}
+.cip-admin-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 14px 16px; border-bottom: 1px solid #f0f2f5; gap: 12px;
+}
+.cip-admin-row:last-child { border-bottom: none; }
+.cip-admin-info { display: flex; flex-direction: column; gap: 3px; }
+.cip-admin-label { font-size: 13.5px; font-weight: 600; color: #111827; }
+.cip-admin-sub { font-size: 12px; color: #9ca3af; }
+
+/* ── Footer ── */
+.cip-footer {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: flex-end;
+  gap: 12px; padding: 14px 24px;
+  background: #fff; border-top: 1px solid #e8eaf0; z-index: 50;
+}
+.cip-btn-cancel {
+  padding: 10px 28px; background: #fff; border: 1.5px solid #d1d5db;
+  border-radius: 8px; font-size: 14px; font-weight: 500; color: #374151;
+  cursor: pointer; font-family: inherit; transition: background 0.15s;
+}
+.cip-btn-cancel:hover { background: #f9fafb; }
+.cip-btn-save {
+  padding: 10px 32px; background: #1ba8d5; border: none; border-radius: 8px;
+  font-size: 14px; font-weight: 600; color: #fff; cursor: pointer;
+  font-family: inherit; transition: background 0.15s;
+}
+.cip-btn-save:hover { background: #1596be; }
+
+/* ── Responsive ── */
+@media (max-width: 640px) {
+  .cip-body { padding: 16px; }
+  .cip-form { padding: 20px 16px 100px; }
+  .cip-pricing-row { grid-template-columns: 1fr; }
+  .cip-page-header { flex-direction: column; align-items: flex-start; }
+}

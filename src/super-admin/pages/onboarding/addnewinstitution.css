@@ -1,0 +1,1416 @@
+﻿/* ══════════════════════════════════════════
+   Add New Institution — Onboarding
+   Prefix: ani-
+══════════════════════════════════════════ */
+
+/* ── Page shell ── */
+.ani-page {
+  min-height: 100vh;
+  background: #f0f2f5;
+  padding: 0 24px 48px;
+  box-sizing: border-box;
+}
+
+/* ── Centered content wrapper ── */
+.ani-content-wrap {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Logo bar ── */
+.ani-logo-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 24px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  margin: 0 -24px;
+}
+
+.ani-logo-img {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* ── Hero banner (constrained, rounded, with margin) ── */
+.ani-hero-banner {
+  position: relative;
+  background: linear-gradient(135deg, #1ba8d5 0%, #0e8bb8 100%);
+  padding: 32px 40px;
+  border-radius: 12px;
+  margin: 24px auto 0;
+  max-width: 960px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.ani-hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: left;
+  width: 100%;
+}
+
+.ani-hero-title {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.ani-hero-sub {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.ani-hero-deco {
+  position: absolute;
+  right: 0;
+  top: 0;
+  pointer-events: none;
+}
+
+/* ── Step progress ── */
+.ani-steps-wrap {
+  max-width: 960px;
+  margin: 16px auto 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 24px 40px 20px;
+}
+
+.ani-steps-track {
+  position: relative;
+  height: 4px;
+  margin-bottom: 20px;
+  margin-top: 16px;
+}
+
+.ani-steps-line-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #e5e7eb;
+  border-radius: 2px;
+}
+
+.ani-steps-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  background: #1ba8d5;
+  border-radius: 2px;
+  transition: width 0.35s ease;
+}
+
+.ani-step-dot-wrap {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.ani-step-dot {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #e5e7eb;
+  border: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, border-color 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.ani-step-dot-active {
+  background: #1ba8d5;
+}
+
+.ani-step-dot-current {
+  background: #fff;
+  border: 2.5px solid #1ba8d5;
+}
+
+.ani-step-dot-current .ani-step-dot-num {
+  color: #1ba8d5;
+  font-weight: 700;
+}
+
+.ani-step-dot-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #6b7280;
+}
+
+.ani-step-dot-active .ani-step-dot-num {
+  color: #fff;
+}
+
+.ani-steps-labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ani-step-label {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ani-step-label-name {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #9ca3af;
+  transition: color 0.2s;
+}
+
+.ani-step-label-sub {
+  font-size: 11px;
+  color: #c4c9d4;
+}
+
+.ani-step-label-active .ani-step-label-name {
+  color: #1ba8d5;
+  font-weight: 700;
+}
+
+.ani-step-label-active .ani-step-label-sub {
+  color: #6b7280;
+}
+
+/* ── Body card ── */
+.ani-card {
+  max-width: 960px;
+  margin: 16px auto 0;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  padding: 32px 40px;
+}
+
+.ani-step-body {
+  width: 100%;
+}
+
+/* ── Section titles ── */
+.ani-section-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 6px;
+}
+
+.ani-section-sub {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+/* ── Logo upload ── */
+.ani-field-group {
+  margin-bottom: 20px;
+}
+
+.ani-label {
+  display: block;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.ani-logo-upload {
+  width: 110px;
+  height: 110px;
+  border: 2px dashed #c8d6e5;
+  border-radius: 10px;
+  background: #eaf6fb;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  overflow: hidden;
+  position: relative;
+}
+
+.ani-logo-upload:hover {
+  border-color: #1ba8d5;
+  background: #ddf1fa;
+}
+
+.ani-logo-plus {
+  font-size: 28px;
+  color: #1ba8d5;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.ani-logo-text {
+  font-size: 11.5px;
+  color: #6b7280;
+  margin-top: 5px;
+}
+
+.ani-logo-preview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── Form rows & fields ── */
+.ani-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.ani-field {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ani-field-relative {
+  position: relative;
+}
+
+.ani-input {
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #374151;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  background: #fff;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.ani-input:focus {
+  outline: none;
+  border-color: #1ba8d5;
+  box-shadow: 0 0 0 3px rgba(27, 168, 213, 0.1);
+}
+
+.ani-input::placeholder {
+  color: #b0b8c4;
+}
+
+/* ── Custom select ── */
+.ani-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 13.5px;
+  color: #374151;
+  font-family: inherit;
+  background: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
+}
+
+.ani-select:hover,
+.ani-select:focus {
+  outline: none;
+  border-color: #1ba8d5;
+  box-shadow: 0 0 0 3px rgba(27, 168, 213, 0.1);
+}
+
+.ani-dropdown-item {
+  padding: 12px 16px;
+  font-size: 13.5px;
+  color: #374151;
+  cursor: pointer;
+  border-radius: 0;
+  transition: background 0.12s;
+}
+
+.ani-dropdown-item:first-child {
+  border-radius: 8px 8px 0 0;
+}
+
+.ani-dropdown-item:last-child {
+  border-radius: 0 0 8px 8px;
+}
+
+.ani-dropdown-item:hover {
+  background: #f3f4f6;
+}
+
+.ani-dropdown-item-active {
+  background: #1ba8d5;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 8px 8px 0 0;
+}
+
+.ani-dropdown-item-active:hover {
+  background: #1ba8d5;
+}
+
+.ani-dropdown {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  z-index: 100;
+  max-height: 220px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── Footer actions ── */
+.ani-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 32px;
+  padding-top: 20px;
+  border-top: 1px solid #f3f4f6;
+}
+
+.ani-btn-cancel {
+  padding: 10px 28px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.2s, background 0.2s;
+  min-width: 100px;
+}
+
+.ani-btn-cancel:hover {
+  border-color: #d1d5db;
+  background: #f9fafb;
+}
+
+.ani-btn-next {
+  padding: 10px 28px;
+  border: none;
+  border-radius: 8px;
+  background: #1ba8d5;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, box-shadow 0.2s;
+  min-width: 100px;
+}
+
+.ani-btn-next:hover {
+  background: #0e8bb8;
+  box-shadow: 0 4px 12px rgba(27, 168, 213, 0.3);
+}
+
+/* ══════════════════════════════════════════
+   Step 2 — Documents grid
+══════════════════════════════════════════ */
+.ani-docs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.ani-doc-card {
+  border: 1.5px dashed #b8d8e8;
+  border-radius: 10px;
+  background: #eaf6fb;
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.ani-doc-card:hover {
+  border-color: #1ba8d5;
+  background: #ddf1fa;
+}
+
+.ani-doc-card-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+}
+
+.ani-doc-card-filename {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.ani-doc-upload-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 18px;
+  border: 1.5px solid #1ba8d5;
+  border-radius: 20px;
+  background: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1ba8d5;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, border-color 0.2s;
+  margin-top: 4px;
+}
+
+.ani-doc-upload-btn:hover {
+  background: #e0f7ff;
+}
+
+.ani-doc-upload-btn-done {
+  background: #dcfce7;
+  border-color: #16a34a;
+  color: #16a34a;
+}
+
+.ani-doc-upload-btn-done:hover {
+  background: #bbf7d0;
+}
+
+/* ══════════════════════════════════════════
+   Step 3 — Trial / Paid tabs
+══════════════════════════════════════════ */
+.ani-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid #e5e7eb;
+  margin-bottom: 24px;
+}
+
+.ani-tab {
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b7280;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.ani-tab:hover {
+  color: #1ba8d5;
+}
+
+.ani-tab-active {
+  color: #1ba8d5;
+  border-bottom-color: #1ba8d5;
+}
+
+/* Toggle */
+.ani-toggle-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  background: #f9fafb;
+}
+
+.ani-toggle-label {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.ani-toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: #d1d5db;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.25s;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.ani-toggle-on {
+  background: #1ba8d5;
+}
+
+.ani-toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  transition: left 0.25s;
+}
+
+.ani-toggle-on .ani-toggle-thumb {
+  left: 23px;
+}
+
+/* Info / warning banner */
+.ani-info-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 12px 16px;
+  background: #fffbeb;
+  border: 1.5px solid #fde68a;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.ani-info-banner span {
+  font-size: 13px;
+  color: #92400e;
+  line-height: 1.5;
+}
+
+/* Paid plan cards */
+.ani-paid-plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.ani-plan-card {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px 16px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ani-plan-card:hover {
+  border-color: #1ba8d5;
+  box-shadow: 0 4px 14px rgba(27, 168, 213, 0.12);
+}
+
+.ani-plan-card-active {
+  border-color: #1ba8d5;
+  box-shadow: 0 4px 14px rgba(27, 168, 213, 0.18);
+}
+
+.ani-plan-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.ani-plan-badge {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ani-badge-recommended {
+  background: #eff6ff;
+  color: #3b82f6;
+}
+
+.ani-badge-large {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+.ani-badge-enterprise {
+  background: #f5f3ff;
+  color: #7c3aed;
+}
+
+.ani-plan-name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.ani-plan-desc {
+  font-size: 12.5px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.ani-plan-select-btn {
+  width: 100%;
+  padding: 9px;
+  border: none;
+  border-radius: 8px;
+  background: #1ba8d5;
+  color: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  margin-top: 6px;
+  transition: background 0.2s;
+}
+
+.ani-plan-select-btn:hover {
+  background: #0e8bb8;
+}
+
+.ani-plan-features {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ani-plan-features-title {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 4px;
+}
+
+.ani-plan-feature-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: #374151;
+}
+
+.ani-plan-best-for {
+  font-size: 11.5px;
+  color: #9ca3af;
+  margin: 6px 0 0;
+  border-top: 1px solid #f3f4f6;
+  padding-top: 8px;
+}
+
+/* ══════════════════════════════════════════
+   Step 4 — Contract upload area
+══════════════════════════════════════════ */
+.ani-upload-area {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  background: #f9fafb;
+  padding: 52px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.ani-upload-area:hover {
+  border-color: #1ba8d5;
+  background: #f0f9ff;
+}
+
+.ani-upload-icon-wrap {
+  margin-bottom: 12px;
+}
+
+.ani-upload-text {
+  font-size: 14px;
+  color: #374151;
+  margin: 0 0 4px;
+}
+
+.ani-upload-link {
+  color: #1ba8d5;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.ani-upload-hint {
+  font-size: 12px;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.ani-upload-file-name {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1ba8d5;
+}
+
+/* ══════════════════════════════════════════
+   Step 5 — Payment
+══════════════════════════════════════════ */
+.ani-payment-summary {
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 4px 20px;
+  margin-bottom: 24px;
+}
+
+.ani-payment-summary-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.ani-payment-summary-row:last-child {
+  border-bottom: none;
+}
+
+.ani-payment-summary-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.ani-payment-summary-value {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.ani-payment-amount {
+  font-size: 17px;
+  color: #1ba8d5;
+}
+
+.ani-payment-method-section {
+  margin-bottom: 20px;
+}
+
+.ani-payment-methods {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.ani-payment-method-card {
+  flex: 1;
+  min-width: 130px;
+  padding: 12px 16px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.ani-payment-method-card:hover {
+  border-color: #1ba8d5;
+  background: #f0f9ff;
+}
+
+.ani-payment-method-card-active {
+  border-color: #1ba8d5;
+  background: #e0f7ff;
+  color: #1ba8d5;
+}
+
+/* ══════════════════════════════════════════
+   Slider
+══════════════════════════════════════════ */
+.ani-configure-box {
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 20px 20px 16px;
+  margin-bottom: 16px;
+  background: #fff;
+}
+
+.ani-slider-wrap {
+  margin-bottom: 20px;
+}
+
+.ani-slider-wrap:last-child {
+  margin-bottom: 0;
+}
+
+.ani-slider-label {
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0 0 14px;
+}
+
+.ani-slider-track-wrap {
+  position: relative;
+  padding-top: 32px;
+}
+
+.ani-slider-bubble {
+  position: absolute;
+  top: 0;
+  background: #1ba8d5;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  transform: translateX(0);
+}
+
+.ani-slider-bubble::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #1ba8d5;
+  border-bottom: none;
+}
+
+.ani-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: linear-gradient(to right, #1ba8d5 var(--pct, 50%), #e5e7eb var(--pct, 50%));
+  outline: none;
+  cursor: pointer;
+}
+
+.ani-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #1ba8d5;
+  box-shadow: 0 2px 6px rgba(27, 168, 213, 0.3);
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+}
+
+.ani-slider::-webkit-slider-thumb:hover {
+  box-shadow: 0 2px 10px rgba(27, 168, 213, 0.5);
+}
+
+.ani-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid #1ba8d5;
+  box-shadow: 0 2px 6px rgba(27, 168, 213, 0.3);
+  cursor: pointer;
+}
+
+.ani-slider-hint {
+  font-size: 11.5px;
+  color: #9ca3af;
+  margin: 6px 0 0;
+}
+
+/* ── Billing summary ── */
+.ani-billing-summary {
+  background: #f9fafb;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 8px;
+}
+
+.ani-billing-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 12px;
+}
+
+.ani-billing-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #6b7280;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.ani-billing-row:last-child {
+  border-bottom: none;
+}
+
+.ani-billing-total {
+  font-size: 14px;
+  font-weight: 700;
+  color: #111827;
+  padding-top: 10px;
+  margin-top: 4px;
+  border-top: 1.5px solid #e5e7eb;
+  border-bottom: none;
+}
+
+/* ── Back link ── */
+.ani-back-link {
+  background: none;
+  border: none;
+  color: #1ba8d5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 16px;
+  font-family: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ani-back-link:hover {
+  color: #0e8bb8;
+}
+
+/* ══════════════════════════════════════════
+   Step 4 — Contract grid
+══════════════════════════════════════════ */
+.ani-contract-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.ani-contract-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.ani-contract-col-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 12px;
+}
+
+.ani-contract-file-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 14px;
+  border: 1.5px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+}
+
+.ani-contract-file-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+
+.ani-contract-filename {
+  font-size: 13px;
+  font-weight: 600;
+  color: #374151;
+  margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ani-contract-filesize {
+  font-size: 11.5px;
+  color: #9ca3af;
+  margin: 2px 0 0;
+}
+
+.ani-download-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1.5px solid #1ba8d5;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #1ba8d5;
+  cursor: pointer;
+  font-family: inherit;
+  white-space: nowrap;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+
+.ani-download-btn:hover {
+  background: #e0f7ff;
+}
+
+.ani-contract-steps-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ani-contract-steps-list li {
+  font-size: 13px;
+  color: #374151;
+  padding-left: 16px;
+  position: relative;
+}
+
+.ani-contract-steps-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #1ba8d5;
+  font-weight: 700;
+}
+
+.ani-upload-area-done {
+  border-color: #1ba8d5;
+  background: #f0f9ff;
+}
+
+/* Agree checkbox */
+.ani-agree-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 14px;
+  cursor: pointer;
+}
+
+.ani-agree-checkbox {
+  width: 16px;
+  height: 16px;
+  accent-color: #1ba8d5;
+  flex-shrink: 0;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.ani-agree-text {
+  font-size: 12.5px;
+  color: #374151;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════
+   Fullscreen status screens (no hero/stepbar)
+══════════════════════════════════════════ */
+.ani-pending-banner-centered {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 380px;
+}
+.ani-fullscreen-status {
+  min-height: 100vh;
+  background: #f4f6f9;
+  display: flex;
+  flex-direction: column;
+}
+
+.ani-status-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px 60px;
+  text-align: center;
+  background: #fff;
+  max-width: 680px;
+  width: calc(100% - 48px);
+  margin: 24px auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+/* ── Success badge ── */
+.ani-success-badge-wrap {
+  margin-bottom: 20px;
+}
+
+.ani-success-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 10px;
+  line-height: 1.35;
+}
+
+.ani-success-sub {
+  font-size: 13.5px;
+  color: #6b7280;
+  margin: 0 0 28px;
+  max-width: 480px;
+  line-height: 1.6;
+}
+
+/* ── What Happens Next ── */
+.ani-next-steps {
+  width: 100%;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ani-next-steps-heading {
+  font-size: 14px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 4px;
+  text-align: center;
+}
+
+.ani-next-step-card {
+  background: #eaf6fb;
+  border-radius: 10px;
+  padding: 14px 18px;
+  text-align: center;
+}
+
+.ani-next-step-title {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #374151;
+  margin: 0 0 4px;
+}
+
+.ani-next-step-desc {
+  font-size: 12.5px;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ══════════════════════════════════════════
+   Verification Pending screen (floating, outside card)
+══════════════════════════════════════════ */
+.ani-pending-page {
+  max-width: 900px;
+  margin: 32px auto 0;
+  padding: 0 24px 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ani-pending-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.ani-pending-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  margin: 16px 0 20px;
+}
+
+.ani-pending-banner {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  background: #fefce8;
+  border: 2px solid #f59e0b;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 420px;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ani-pending-banner > svg {
+  flex-shrink: 0;
+}
+
+.ani-pending-banner-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #92400e;
+  margin: 4px 0 4px;
+}
+
+.ani-pending-banner-sub {
+  font-size: 12.5px;
+  color: #92400e;
+  margin: 0;
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ══════════════════════════════════════════
+   Responsive
+══════════════════════════════════════════ */
+@media (max-width: 1008px) {
+  /* 960px + 2*24px = 1008px — at this point elements hit the padding */
+  .ani-hero-banner,
+  .ani-steps-wrap,
+  .ani-card {
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ani-page {
+    padding: 0 16px 48px;
+  }
+
+  .ani-logo-bar {
+    margin: 0 -16px;
+  }
+
+  .ani-card {
+    padding: 24px 24px;
+  }
+
+  .ani-steps-wrap {
+    padding: 20px 24px 16px;
+  }
+
+  .ani-hero-banner {
+    padding: 28px 24px;
+  }
+
+  .ani-paid-plans {
+    grid-template-columns: 1fr;
+  }
+
+  .ani-contract-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .ani-row {
+    grid-template-columns: 1fr;
+  }
+
+  .ani-docs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ani-steps-labels {
+    display: none;
+  }
+
+  .ani-hero-title {
+    font-size: 20px;
+  }
+
+  .ani-hero-sub {
+    font-size: 13px;
+  }
+
+  .ani-card {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .ani-page {
+    padding: 0 12px 48px;
+  }
+
+  .ani-logo-bar {
+    margin: 0 -12px;
+  }
+
+  .ani-footer {
+    flex-direction: column-reverse;
+    gap: 10px;
+  }
+
+  .ani-btn-cancel,
+  .ani-btn-next {
+    width: 100%;
+    text-align: center;
+  }
+
+  .ani-payment-methods {
+    flex-direction: column;
+  }
+
+  .ani-payment-method-card {
+    min-width: unset;
+  }
+
+  .ani-toggle-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .ani-contract-file-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

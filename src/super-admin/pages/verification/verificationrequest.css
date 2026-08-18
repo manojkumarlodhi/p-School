@@ -1,0 +1,366 @@
+/* ── Verification Request Page ── */
+/* Prefix: vr- (avoids conflicts with other page styles) */
+
+.vr-page {
+  min-height: 100%;
+  background: #f4f6f9;
+}
+
+/* ── Page header ── */
+.vr-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px 14px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.vr-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.vr-breadcrumb {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ── Tabs (underline style) ── */
+.vr-tabs {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+  padding: 0 24px;
+}
+
+.vr-tab {
+  padding: 12px 20px;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #6b7280;
+  background: none;
+  border: none;
+  border-bottom: 2.5px solid transparent;
+  cursor: pointer;
+  font-family: inherit;
+  transition: color 0.15s, border-color 0.15s;
+  margin-bottom: -1px;
+}
+
+.vr-tab:hover {
+  color: #1ba8d5;
+}
+
+.vr-tab.active {
+  color: #1ba8d5;
+  border-bottom-color: #1ba8d5;
+  font-weight: 700;
+}
+
+/* ── Body ── */
+.vr-body {
+  padding: 20px 24px;
+}
+
+/* ── Toolbar ── */
+.vr-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.vr-section-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.vr-toolbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Search */
+.vr-search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 7px 14px;
+  background: #fff;
+  color: #9ca3af;
+  min-width: 220px;
+}
+
+.vr-search-input {
+  border: none;
+  outline: none;
+  font-size: 13px;
+  color: #374151;
+  background: transparent;
+  width: 100%;
+  font-family: inherit;
+}
+.vr-search-input::placeholder { color: #9ca3af; }
+
+/* Filter button */
+.vr-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s, color 0.15s;
+}
+.vr-filter-btn:hover { border-color: #1ba8d5; color: #1ba8d5; }
+
+/* ── Table card ── */
+.vr-table-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.vr-table-wrapper {
+  overflow-x: auto;
+}
+
+.vr-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+/* Table header */
+.vr-table thead tr {
+  background: #f9fafb;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.vr-table th {
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Table rows */
+.vr-table tbody tr {
+  border-bottom: 1px solid #f3f4f6;
+  transition: background 0.12s;
+}
+.vr-table tbody tr:last-child { border-bottom: none; }
+.vr-table tbody tr:hover { background: #f9fafb; }
+
+.vr-table td {
+  padding: 13px 16px;
+  color: #374151;
+  font-size: 13.5px;
+  white-space: nowrap;
+}
+
+/* Institute name cell */
+.vr-td-name {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ── Status badges ── */
+.vr-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Pending Verification — orange */
+.vr-badge-pending {
+  background: #fff7ed;
+  color: #ea580c;
+}
+
+/* Send Contract — blue/cyan */
+.vr-badge-send-contract {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+/* Received Contract — purple/lavender */
+.vr-badge-received-contract {
+  background: #f3e8ff;
+  color: #7c3aed;
+}
+
+/* Reject — red */
+.vr-badge-reject {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+/* Active — green */
+.vr-badge-active {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+/* Submitted — teal */
+.vr-badge-submitted {
+  background: #ccfbf1;
+  color: #0f766e;
+}
+
+/* ── Action icon button ── */
+.vr-action-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #6b7280;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+.vr-action-btn:hover {
+  border-color: #1ba8d5;
+  color: #1ba8d5;
+  background: #f0f9ff;
+}
+
+/* Empty state */
+.vr-empty {
+  text-align: center;
+  color: #9ca3af;
+  padding: 32px 16px;
+}
+
+/* ── Pagination ── */
+.vr-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-top: 1px solid #f3f4f6;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.vr-page-prev,
+.vr-page-next {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  border: 1.5px solid #1ba8d5;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  color: #1ba8d5;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.vr-page-prev:hover,
+.vr-page-next:hover { background: #e0f7ff; }
+
+.vr-page-prev:disabled,
+.vr-page-next:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+.vr-page-prev:disabled:hover,
+.vr-page-next:disabled:hover { background: #fff; }
+
+.vr-page-numbers {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.vr-page-num {
+  min-width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.12s, color 0.12s;
+  padding: 0 4px;
+}
+.vr-page-num:hover { background: #f3f4f6; }
+
+.vr-page-num.active {
+  background: #1ba8d5;
+  color: #fff;
+  font-weight: 700;
+}
+
+.vr-page-ellipsis {
+  font-size: 13px;
+  color: #9ca3af;
+  padding: 0 4px;
+  user-select: none;
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .vr-body { padding: 16px; }
+  .vr-page-header { padding: 14px 16px; }
+  .vr-tabs { overflow-x: auto; padding: 0 16px; }
+}
+
+@media (max-width: 600px) {
+  .vr-toolbar { flex-direction: column; align-items: flex-start; }
+  .vr-toolbar-actions { width: 100%; flex-wrap: wrap; }
+  .vr-search { min-width: unset; flex: 1; }
+  .vr-pagination { flex-direction: column; align-items: center; }
+}
+
+/* ── Instructor-specific doc status badges ── */
+
+/* Interview Scheduled — blue */
+.vr-badge-interview {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+/* Pending Review — amber */
+.vr-badge-pending-review {
+  background: #fef3c7;
+  color: #b45309;
+}

@@ -1,0 +1,212 @@
+/* ── Revenue Page ── prefix: rv- */
+
+.rv-page {
+  min-height: 100%;
+  background: #f4f6f9;
+}
+
+/* ── Page header ── */
+.rv-page-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px 14px;
+  background: #fff;
+  border-bottom: 1px solid #e8eaf0;
+}
+
+.rv-page-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0;
+}
+
+.rv-breadcrumb {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* ── Body ── */
+.rv-body {
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Stat cards grid: 4 per row ── */
+.rv-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+}
+
+.rv-stat-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rv-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.rv-stat-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #e0f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.rv-trend-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 20px;
+}
+
+.rv-trend-up {
+  color: #16a34a;
+  background: #dcfce7;
+}
+
+.rv-trend-down {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.rv-stat-label {
+  font-size: 11.5px;
+  color: #9ca3af;
+  font-weight: 400;
+  line-height: 1.3;
+}
+
+.rv-stat-value {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: -0.3px;
+}
+
+/* ── Charts rows ── */
+.rv-charts-row {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 16px;
+  align-items: start;
+}
+
+.rv-chart-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #e8eaf0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 20px 20px 16px;
+}
+
+.rv-chart-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 16px;
+}
+
+/* ── Custom tooltip ── */
+.rv-tooltip {
+  background: #1ba8d5;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(27,168,213,0.3);
+}
+
+/* ── Top Institutions ── */
+.rv-top-inst-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.rv-top-inst-badge {
+  font-size: 11px;
+  font-weight: 600;
+  color: #1ba8d5;
+  background: #e0f7ff;
+  border: 1px solid #b3ecff;
+  border-radius: 20px;
+  padding: 3px 10px;
+  white-space: nowrap;
+}
+
+.rv-top-inst-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.rv-top-inst-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.rv-top-inst-name {
+  font-size: 12.5px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.rv-top-inst-bar-track {
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.rv-top-inst-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #1ba8d5, #38bdf8);
+  border-radius: 8px;
+  transition: width 0.4s ease;
+}
+
+/* ── Responsive ── */
+@media (max-width: 1200px) {
+  .rv-stats-grid { grid-template-columns: repeat(4, 1fr); }
+  .rv-charts-row { grid-template-columns: 1fr 360px; }
+}
+
+@media (max-width: 1024px) {
+  .rv-stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .rv-charts-row { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .rv-body { padding: 14px 16px; }
+  .rv-stats-grid { grid-template-columns: 1fr 1fr; }
+  .rv-page-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+}
+
+@media (max-width: 400px) {
+  .rv-stats-grid { grid-template-columns: 1fr; }
+}

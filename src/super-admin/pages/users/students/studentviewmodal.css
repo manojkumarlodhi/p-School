@@ -1,0 +1,297 @@
+/* ── Backdrop ── */
+.svm-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  backdrop-filter: blur(2px);
+}
+
+/* ── Modal card ── */
+.svm-modal {
+  background: #ffffff;
+  border-radius: 16px;
+  width: 100%;
+  max-width: 560px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px 28px 24px;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  scrollbar-width: none;
+}
+.svm-modal::-webkit-scrollbar { display: none; }
+
+/* ── Close button ── */
+.svm-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  border: none;
+  background: #f3f4f6;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #374151;
+  transition: background 0.15s, color 0.15s;
+}
+.svm-close:hover { background: #fee2e2; color: #ef4444; }
+
+/* ── Profile header ── */
+.svm-profile-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding-right: 40px;
+  margin-bottom: 20px;
+}
+
+.svm-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid #e0f2fe;
+  box-shadow: 0 4px 12px rgba(27, 168, 213, 0.2);
+}
+
+.svm-name {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 4px;
+}
+
+.svm-institution {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* ── Divider ── */
+.svm-divider {
+  height: 1px;
+  background: #f0f2f5;
+  margin: 16px 0;
+}
+
+/* ── Badges + Enrollment ── */
+.svm-badges-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.svm-badges {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.svm-badge {
+  display: inline-block;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Role badge — purple outline */
+.svm-badge-role {
+  border: 1.5px solid #a855f7;
+  color: #a855f7;
+  background: #faf5ff;
+}
+
+/* Subscription badge */
+.svm-badge-sub.premium {
+  border: 1.5px solid #f59e0b;
+  color: #f59e0b;
+  background: #fffbeb;
+}
+
+.svm-badge-sub.standard {
+  border: 1.5px solid #6b7280;
+  color: #6b7280;
+  background: #f9fafb;
+}
+
+.svm-enrollment {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+}
+
+.svm-enrollment-label {
+  color: #6b7280;
+}
+
+.svm-enrollment-date {
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ── Info cards ── */
+.svm-info-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.svm-info-card {
+  background: #f8fafc;
+  border-radius: 10px;
+  padding: 14px 16px;
+  border: 1px solid #f0f2f5;
+}
+
+.svm-info-label {
+  font-size: 11.5px;
+  color: #9ca3af;
+  margin-bottom: 6px;
+}
+
+.svm-info-value {
+  font-size: 15px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ── Contact row ── */
+.svm-contact-row {
+  display: flex;
+  gap: 32px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.svm-contact-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 140px;
+}
+
+.svm-contact-label {
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.svm-contact-value {
+  font-size: 14px;
+  font-weight: 600;
+  color: #111827;
+}
+
+/* ── Toggle ── */
+.svm-toggle {
+  position: relative;
+  display: inline-block;
+  width: 42px;
+  height: 24px;
+  margin-top: 2px;
+}
+
+.svm-toggle input { opacity: 0; width: 0; height: 0; }
+
+.svm-toggle-slider {
+  position: absolute;
+  inset: 0;
+  background: #d1d5db;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.svm-toggle input:checked + .svm-toggle-slider {
+  background: #1ba8d5;
+}
+
+.svm-toggle-slider::before {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  left: 3px;
+  top: 3px;
+  background: #fff;
+  border-radius: 50%;
+  transition: transform 0.2s;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+
+.svm-toggle input:checked + .svm-toggle-slider::before {
+  transform: translateX(18px);
+}
+
+/* ── Parent Details ── */
+.svm-section-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 14px;
+}
+
+/* ── Actions ── */
+.svm-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.svm-btn-cancel {
+  padding: 10px 28px;
+  background: #fff;
+  border: 1.5px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.svm-btn-cancel:hover { background: #f9fafb; }
+
+.svm-btn-suspend {
+  padding: 10px 28px;
+  background: #ef4444;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+}
+.svm-btn-suspend:hover { background: #dc2626; }
+
+/* ── Responsive ── */
+@media (max-width: 560px) {
+  .svm-modal { padding: 20px 18px 18px; }
+  .svm-info-cards { grid-template-columns: 1fr 1fr; }
+  .svm-badges-row { flex-direction: column; align-items: flex-start; }
+  .svm-contact-row { gap: 20px; }
+  .svm-name { font-size: 18px; }
+  .svm-avatar { width: 64px; height: 64px; }
+}
+
+@media (max-width: 380px) {
+  .svm-info-cards { grid-template-columns: 1fr; }
+}
